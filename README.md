@@ -4,9 +4,9 @@
 [![Issues][issues-shield]][issues-url]
 [![License][license-shield]][license-url]
 
-# The Learning Source Enrollment Registration
+# Career Fair Registration
 
-## ESL Registration Portal Documentation
+## Career Fair Registration Portal Documentation
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -15,7 +15,6 @@
    - [Deployment Information](#deployment-information)
    - [Built With](#built-with)
    - [Database Schema](#database-schema)
-   - [Learning Goals](#learning-goals)
 2. [Getting Started](#getting-started)
    - [Prerequisites](#prerequisites)
    - [Installation](#installation)
@@ -39,13 +38,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project aims to create an online enrollment registration website for [The Learning Source (TLS)](https://www.thelearningsource.org/), an organization committed to empowering immigrant and refugee students through education. The primary goal is to streamline the enrollment process for prospective students, based on staff insights and feedback.
+This project aims to create an online registration system for the career fair.
 
-Our web application harnesses React for frontend and Ruby on Rails for backend within a unique monolithic setup. We leverage HTML5, CSS3, JavaScript, Ruby, and PostgreSQL alongside Vite.js for a streamlined development experience. The design workflow is managed through GitHub Issues and documented using Google Docs.
-
-To ensure high quality, we employ a Test-Driven Development (TDD) approach using RSpec for unit tests; and Capybara, Selenium, and ChromeDriver for feature testing and cross-browser compatibility checks.
-
-For our DevOps processes, we use Render and GitHub to maintain a smooth and reliable release pipeline. This project is an opportunity for us to explore the combination of Rails and React.js, enhance our understanding of TDD, and optimize our DevOps practices.
+This web application harnesses React for frontend and Ruby on Rails for backend within a unique monolithic setup. It leverages HTML5, CSS3, JavaScript, Ruby, and PostgreSQL alongside Vite.js for a streamlined development experience.
+For DevOps processes, it is recommended to use Render and GitHub to maintain a smooth and reliable release pipeline. 
 
 <div align="right">
 
@@ -56,9 +52,7 @@ For our DevOps processes, we use Render and GitHub to maintain a smooth and reli
 <!-- Deployment Information -->
 ### Deployment Information
 
-The Learning Source Enrollment Registration was, but is no longer, deployed on Render. Further development of this project has been put on hiatus due to a combination of organizational structure change, this having been a volunteer project, and development of other projects professionally at work. 
-
-There are still features to experiment with and work on, for learning purposes, and once there is time to do so the project will be re-deployed.
+Will add information as per future discussion.
 
 <div align="right">
 
@@ -88,46 +82,9 @@ There are still features to experiment with and work on, for learning purposes, 
 
 </div>
 
-<!-- Learning Goals -->
-### Learning Goals
-
-The primary learning goal for this project was to learn how to use Javascript and React. The secondary goal was to learn how to integrate it into Rails within a Monolith application where the normal Rails workflow would apply but the view pages would be rendered using React instead of Rails. Both of these goals were accomplished within the scope of the project.
-
-<div align="right">
-
-[(back to top)](#top)
-
-</div>
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-This section provides a step-by-step guide on how to install and run this project on your local machine.
-
-<!-- PREREQUISITES -->
-### Prerequisites
-
-For tests to be run correctly then make sure you have installed [Chrome Driver](https://sites.google.com/a/chromium.org/chromedriver/) before you begin. This is needed for the selenium webdriver gem to function, allowing RSpec and Capybara to run JavaScript correctly and test the webpage contents.
-
-For macOS users:
-
-1. Install Chrome Driver using Homebrew: `brew install --cask chromedriver`.
-2. Confirm installation by running `chromedriver -v`.
-
-> **Note:** In case Chrome Driver is quarantined by macOS:
->
-> 1. Run `which chromedriver` to find the installation path. The output should look similar to `/usr/local/bin/chromedriver`.
-> 2. Run `xattr -d com.apple.quarantine /usr/local/bin/chromedriver`.
-> 3. Confirm it's working by repeating step 2 above.
-
-<div align="right">
-
-[(back to top)](#top)
-
-</div>
-
 <!-- INSTALLATION -->
 ### Installation
+Not up to date. Will update as per future discussion. The steps below are for the original repo (The Learning Source Enrollment Form).
 
 Follow the steps below to install and set up the repository on your local machine:
 
@@ -166,25 +123,10 @@ Follow the steps below to install and set up the repository on your local machin
 
 </div>
 
-<!-- TO RUN TESTS -->
-#### To run tests
-
-You will need two terminal windows (or tabs):
-
-1. **Terminal 1:** Navigate to the project directory and start the Vite server with `npm run dev`. This command starts the Vite server, which the tests will interact with. Ensure that the Vite server is always running in the background while executing the tests.
-
-2. **Terminal 2:** Navigate to the project directory and run `bundle exec rspec` to run the entire RSpec test suite. The test results will be output in this terminal window.
-
-<div align="right">
-
-[(back to top)](#top)
-
-</div>
-
 <!-- Gems Utilized -->
 ### Gems Utilized
 
-The Learning Source Enrollment Registration utilizes the following gems:
+The Career Fair Registration web app utilizes the following gems:
 
 - [Ruby 3.1.1](https://www.ruby-lang.org/)
 - [Rails 7.0.4](https://rubyonrails.org/) - Our web application framework.
@@ -247,102 +189,23 @@ The Learning Source Enrollment Registration utilizes the following JavaScript pa
 
 </div>
 
-<!-- ROADMAP -->
-## Roadmap
-
-The following is a roadmap for our project, outlining our Minimum Viable Product (MVP) and the key steps towards achieving it:
-
-<!-- INITIAL RESEARCH AND DECISIONS -->
-### Initial Research and Decisions
-
-- [x] Evaluate the feasibility of passing data between controller and React components in a monolithic MVC, RESTful architecture using Vite.
-- [x] Assess the potential for Test-Driven Development (TDD) using RSpec and Capybara for webpages that utilize JavaScript.
-- [x] Decide on project structure: whether to utilize a standard Rails monolith or a React + Rails setup with Vite.
-
-<!-- ENROLLMENT MANAGEMENT -->
-### Enrollment Management
-
-- [x] Develop the ability to create new enrollment sessions.
-- [x] Restrict the creation of new enrollment sessions to admins only.
-
-<!-- PROSPECTIVE STUDENT FEATURES -->
-### Prospective Student Features
-
-- [x] Enable prospective students to view a list of enrollment sessions.
-- [x] Allow prospective students to select an enrollment session to join from the list of available sessions.
-- [x] Implement a cap on each session's student count (default of 30), after which prospective students won't have the option to join.
-- [x] Upon successful joining of a session, redirect students to a confirmation page displaying registration details and staff contact information.
-
-<!-- ADMIN FEATURES -->
-### Admin Features
-
-- [x] Enable admins to view a list of enrollment sessions.
-- [x] Develop the capability for admins to view the details of specific enrollment sessions.
-- [x] Create editable and deletable buttons for admins to manage students within a specific enrollment session.
-- [x] Build the ability for admins to modify details of a specific enrollment session.
-- [x] Enable admins to add and/or remove students from a specific enrollment session.
-- [x] Admin login authentication
-- [x] Admin authorization within admin workflow
-
-<!-- DATABASE ENHANCEMENTS -->
-### Database Enhancements
-
-- [x] Add "language spoken" field to the student database schema.
-
-<!-- DEPLOYMENT AND DOCUMENTATION -->
-### Deployment and Documentation
-
-- [x] Deploy the application on Render.
-- [ ] Create a detailed README file.
-
-<!-- STRETCH GOALS -->
-### Stretch Goals
-
-- [ ] Add a language toggle for the student enrollment user experience to support Spanish, Arabic and Russian.
-- [ ] Add accessibility/Alt descriptive text to page elements
-
-Please refer to the [open issues](https://github.com/msakr21/registration/issues) for a full list of proposed features and known issues.
-
-<div align="right">
-
-[(back to top)](#top)
-
-</div>
-
 <!-- CONTACT -->
 ## Contact
 
 <table>
   <tr>
     <td><img src="https://avatars.githubusercontent.com/u/110377741?s=150&v=4"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/101418582?s=150&v=4"></td>
   </tr>
   <tr>
     <td>Mostafa Sakr</td>
-    <td>Bryan Keener</td>
   </tr>
   <tr>
     <td>
       <img src="public/github-logo.png" alt="github"> <a href="https://github.com/msakr21">GitHub</a><br>
       <img src="public/linkedin-logo.png" alt="linkedin"> <a href="https://linkedin.com/in/mostafasakr16/">LinkedIn</a>
     </td>
-    <td>
-      <img src="public/github-logo.png" alt="github"> <a href="https://github.com/bkeener7">GitHub</a><br>
-      <img src="public/linkedin-logo.png" alt="linkedin"> <a href="https://www.linkedin.com/in/bkeener/">LinkedIn</a>
-    </td>
   </tr>
 </table>
-
-<div align="right">
-
-[(back to top)](#top)
-
-</div>
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-[The Learning Source](https://www.thelearningsource.org/)
 
 <div align="right">
 
