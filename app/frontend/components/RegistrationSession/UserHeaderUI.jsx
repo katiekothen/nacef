@@ -3,7 +3,7 @@ import {Button, Navbar, Form, Row, Col} from 'react-bootstrap';
 import { CSVLink } from "react-csv";
 
 
-function UserHeaderUI(userType, enrollmentCSVData, studentsCSVData) {
+function UserHeaderUI(userType, registrationSessionCSVData, applicantsCSVData) {
   const token = document.head.getElementsByTagName('meta')[2].content;
   const currentPageLanguage = window.location.pathname.split("/")[1]
   const [displayLanguage, setDisplayLanguage] = useState(currentPageLanguage)
@@ -22,7 +22,7 @@ function UserHeaderUI(userType, enrollmentCSVData, studentsCSVData) {
   }
 
   if (userType === "admin") {
-    return (<Navbar className="bg-body-tertiary justify-content-between"> <div /> <div> &emsp; &emsp; &emsp; &emsp; <a href={"/admin/enrollments"}>Enrollment Index</a> &emsp; <a href={"/admin/enrollments/new"}>New Enrollment Session</a> &emsp; <CSVLink data={enrollmentCSVData} filename={"enrollments"}>Enrollments CSV file</CSVLink> &emsp; <CSVLink data={studentsCSVData} filename={"students"}>Students CSV file</CSVLink></div> <div>
+    return (<Navbar className="bg-body-tertiary justify-content-between"> <div /> <div> &emsp; &emsp; &emsp; &emsp; <a href={"/admin/registration_sessions"}>Registration Session Index</a> &emsp; <a href={"/admin/registration_sessions/new"}>New Registration Session</a> &emsp; <CSVLink data={registrationSessionCSVData} filename={"registration_sessions"}>Registration Sessions CSV file</CSVLink> &emsp; <CSVLink data={applicantsCSVData} filename={"applicants"}>Applicants CSV file</CSVLink></div> <div>
       <form action='/logout' method="post">
       <input type="hidden" name="authenticity_token" value={token} />
       <input type="hidden" name="_method" value="DELETE" />

@@ -6,15 +6,15 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form, Card, Row } from 'react-bootstrap';
-import UserHeaderUI from '~/components/Enrollment/UserHeaderUI.jsx';
+import UserHeaderUI from '~/components/RegistrationSession/UserHeaderUI.jsx';
 
-function EnrollmentForm(props) {
+function RegistrationSessionForm(props) {
   const csrf_token = document.head.getElementsByTagName('meta')[2].content;
-  const enrollments = JSON.parse(document.getElementById("data").getAttribute("enrollments"));
-  const allStudents = JSON.parse(document.getElementById("data").getAttribute("all_students"));
+  const registrationSessions = JSON.parse(document.getElementById("data").getAttribute("registration_sessions"));
+  const allApplicants = JSON.parse(document.getElementById("data").getAttribute("all_applicants"));
   const [location, setLocation] = useState(props.location);
   const [schedule, setSchedule] = useState(props.schedule);
-  const [students, setStudents] = useState(props.students || 30);
+  const [applicants, setApplicants] = useState(props.applicants || 30);
   const method = props.method;
   const path = props.path;
 
@@ -26,8 +26,8 @@ function EnrollmentForm(props) {
     setLocation(event.target.value);
   };
 
-  const handleStudentsChange = (event) => {
-    setStudents(event.target.value);
+  const handleApplicantsChange = (event) => {
+    setApplicants(event.target.value);
   };
 
   function RenderField(method) {
@@ -39,7 +39,7 @@ function EnrollmentForm(props) {
   //tweak method above to take all caps so it can be reusable for patch and delete and split into own component
 
   return (
-    <div>{UserHeaderUI(props.admin, enrollments, allStudents)}
+    <div>{UserHeaderUI(props.admin, registrationSessions, allApplicants)}
     <Row style={{ height: "95vh" }}>
       <Card className="card mx-auto my-auto" style={{ width: "40%" }}>
         <Card.Title style={{ marginTop: "25px", marginBottom: "20px" }} className="text-center">Please fill the form below:</Card.Title>
@@ -58,9 +58,9 @@ function EnrollmentForm(props) {
           </div>
           <br />
           <div>
-            <Form.Group className="mb-3" controlId="formStudentLimit">
-              <Form.Label>Maximum number of students:</Form.Label>
-              <Form.Control type="number" placeholder="Enter student limit" name="student_limit" value={students} onChange={handleStudentsChange} />
+            <Form.Group className="mb-3" controlId="formApplicantLimit">
+              <Form.Label>Maximum number of applicants:</Form.Label>
+              <Form.Control type="number" placeholder="Enter applicant limit" name="applicant_limit" value={applicants} onChange={handleApplicantsChange} />
             </Form.Group>
           </div>
           <br />
@@ -95,4 +95,4 @@ function EnrollmentForm(props) {
   );
 }
 
-export default EnrollmentForm;
+export default RegistrationSessionForm;

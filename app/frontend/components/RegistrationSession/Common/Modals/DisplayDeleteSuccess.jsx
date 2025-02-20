@@ -3,9 +3,9 @@ import { Alert } from "react-bootstrap";
 
 function DisplayDeleteSuccess(deleteConfirmation) {
   if (deleteConfirmation === 'true') {
-    return <Alert variant="success" dismissible>"The enrollment was deleted successfully."</Alert>;
+    return <Alert variant="success" dismissible>"The session was deleted successfully."</Alert>;
   } else if (deleteConfirmation === 'error') {
-    return <Alert variant="danger" dismissible>"Can't delete session with registered students. Please remove students first."</Alert>;
+    return <Alert variant="danger" dismissible>"Can't delete session with registered applicants. Please remove applicants first."</Alert>;
   }
 }
 

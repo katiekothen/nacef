@@ -1,22 +1,22 @@
 import React from 'react';
 import { Button } from "react-bootstrap";
-import ShowDeleteModal from '~/components/Enrollment/Common/Modals/ShowDeleteModal.jsx';
+import ShowDeleteModal from '~/components/RegistrationSession/Common/Modals/ShowDeleteModal.jsx';
 import { Trash, Pencil } from "react-bootstrap-icons";
 import { MDBInput } from 'mdb-react-ui-kit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSave } from "@fortawesome/free-regular-svg-icons";
 
-function TableRows(rowEdit, formValue, student, index, handleChange, enrollment, setRowEdit, setFormValue, setDeletePath, setDeleteMessage, setDisplayConfirmationModal) {
-  function clickToEditRow(student, index) {
+function TableRows(rowEdit, formValue, applicant, index, handleChange, registrationSession, setRowEdit, setFormValue, setDeletePath, setDeleteMessage, setDisplayConfirmationModal) {
+  function clickToEditRow(applicant, index) {
     setRowEdit(!rowEdit);
     setFormValue({
-      firstName: student.first_name,
-      lastName: student.last_name,
-      email: student.email,
-      phone: student.phone,
-      language: student.language,
+      firstName: applicant.first_name,
+      lastName: applicant.last_name,
+      email: applicant.email,
+      phone: applicant.phone,
+      language: applicant.language,
       rowID: index,
-      studentID: student.id
+      applicantID: applicant.id
     });
   }
 
@@ -30,9 +30,9 @@ function TableRows(rowEdit, formValue, student, index, handleChange, enrollment,
         <td><MDBInput name="phone" className="text-center align-middle" type='text' onChange={handleChange} value={formValue.phone}></MDBInput></td>
         <td><MDBInput name="language" className="text-center align-middle" type='text' onChange={handleChange} value={formValue.language}></MDBInput></td>
         <td>
-          <Button name="pen" style={{ outline: "none", border: "0", boxShadow: "none", backgroundColor: "transparent" }} onClick={() => clickToEditRow(student, index)}> <Pencil color="blue" /> </Button>
+          <Button name="pen" style={{ outline: "none", border: "0", boxShadow: "none", backgroundColor: "transparent" }} onClick={() => clickToEditRow(applicant, index)}> <Pencil color="blue" /> </Button>
           <Button name="save" style={{ outline: "none", border: "0", boxShadow: "none", backgroundColor: "transparent" }} type="submit" form={"editForm"}> <FontAwesomeIcon icon={faSave} color="blue" /> </Button>
-          <Button name="trash" style={{ outline: "none", border: "0", boxShadow: "none", backgroundColor: "transparent" }} onClick={() => ShowDeleteModal(student, student.id, setDeletePath, setDeleteMessage, setDisplayConfirmationModal, enrollment)}> <Trash color="red" /> </Button>
+          <Button name="trash" style={{ outline: "none", border: "0", boxShadow: "none", backgroundColor: "transparent" }} onClick={() => ShowDeleteModal(applicant, applicant.id, setDeletePath, setDeleteMessage, setDisplayConfirmationModal, registrationSession)}> <Trash color="red" /> </Button>
         </td>
       </tr>
     );
@@ -40,15 +40,15 @@ function TableRows(rowEdit, formValue, student, index, handleChange, enrollment,
     return (
       <tr id={index} key={index} >
         <td className="text-center align-middle" style={{ padding: "0px" }}>{index + 1}</td>
-        <td className="text-center align-middle" style={{ padding: "0px" }}>{student.first_name}</td>
-        <td className="text-center align-middle" style={{ padding: "0px" }}>{student.last_name}</td>
-        <td className="text-center align-middle" style={{ padding: "0px" }}>{student.email}</td>
-        <td className="text-center align-middle" style={{ padding: "0px" }}>{student.phone}</td>
-        <td className="text-center align-middle" style={{ padding: "0px" }}>{student.language}</td>
+        <td className="text-center align-middle" style={{ padding: "0px" }}>{applicant.first_name}</td>
+        <td className="text-center align-middle" style={{ padding: "0px" }}>{applicant.last_name}</td>
+        <td className="text-center align-middle" style={{ padding: "0px" }}>{applicant.email}</td>
+        <td className="text-center align-middle" style={{ padding: "0px" }}>{applicant.phone}</td>
+        <td className="text-center align-middle" style={{ padding: "0px" }}>{applicant.language}</td>
         <td className="text-center align-middle" style={{ padding: "0px" }}>
-          <Button name="pen" style={{ outline: "none", border: "0", boxShadow: "none", backgroundColor: "transparent" }} onClick={() => clickToEditRow(student, index)}> <Pencil color="blue" /> </Button>
+          <Button name="pen" style={{ outline: "none", border: "0", boxShadow: "none", backgroundColor: "transparent" }} onClick={() => clickToEditRow(applicant, index)}> <Pencil color="blue" /> </Button>
           <Button name="save" style={{ outline: "none", border: "0", boxShadow: "none", backgroundColor: "transparent" }} disabled={true}> <FontAwesomeIcon icon={faSave} color="lightgrey" /> </Button>
-          <Button name="trash" style={{ outline: "none", border: "0", boxShadow: "none", backgroundColor: "transparent" }} onClick={() => ShowDeleteModal(student, student.id, setDeletePath, setDeleteMessage, setDisplayConfirmationModal, enrollment)}> <Trash color="red" /> </Button>
+          <Button name="trash" style={{ outline: "none", border: "0", boxShadow: "none", backgroundColor: "transparent" }} onClick={() => ShowDeleteModal(applicant, applicant.id, setDeletePath, setDeleteMessage, setDisplayConfirmationModal, registrationSession)}> <Trash color="red" /> </Button>
         </td>
       </tr>
     );

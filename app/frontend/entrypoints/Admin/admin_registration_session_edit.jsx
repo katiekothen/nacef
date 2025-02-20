@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import EnrollmentForm from '~/components/Enrollment/AdminOnly/EnrollmentForm';
+import RegistrationSessionForm from '~/components/RegistrationSession/AdminOnly/RegistrationSessionForm';
 
-const enrollment_id = document.getElementById("data").getAttribute("enrollmentID");
+const registrationSessionID = document.getElementById("data").getAttribute("registrationSessionID");
 const location = document.getElementById("data").getAttribute("location");
 const schedule = new Date(document.getElementById("data").getAttribute("schedule"));
 const students = document.getElementById("data").getAttribute("students");
-const uri = `/admin/enrollments/${enrollment_id}`;
+const uri = `/admin/registration_sessions/${registrationSessionID}`;
 
 const container = document.getElementById('edit');
 const root = ReactDOM.createRoot(container);
 
 root.render(
-  <EnrollmentForm
+  <RegistrationSessionForm
     location={location}
     schedule={schedule}
     students={students}

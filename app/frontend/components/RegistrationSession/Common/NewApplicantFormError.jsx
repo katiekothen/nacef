@@ -1,8 +1,8 @@
 import React from 'react';
 import { Alert } from 'react-bootstrap';
-import ErrorHandling from '~/components/Enrollment/Common/ErrorHandling.jsx';
+import ErrorHandling from '~/components/RegistrationSession/Common/ErrorHandling.jsx';
 
-function NewStudentFormError(errors) {
+function NewApplicantFormError(errors) {
   if (errors != null) {
     return Object.keys(errors).map((errorName, index) => (
       <Alert key={index} variant="danger" dismissible>
@@ -13,4 +13,4 @@ function NewStudentFormError(errors) {
   }
 }
 
-export default NewStudentFormError;
+export default NewApplicantFormError;

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import DeleteConfirmation from '~/components/Enrollment/Common/Modals/DeleteConfirmation.jsx';
-import ShowEnrollmentCard from '~/components/Enrollment/AdminOnly/ShowPage/ShowEnrollmentCard.jsx';
-import EnrolledStudents from '~/components/Enrollment/AdminOnly/ShowPage/EnrolledStudents.jsx';
+import DeleteConfirmation from '~/components/RegistrationSession/Common/Modals/DeleteConfirmation.jsx';
+import ShowRegistrationSessionCard from '~/components/RegistrationSession/AdminOnly/ShowPage/ShowRegistrationSessionCard.jsx';
+import RegisteredApplicants from '~/components/RegistrationSession/AdminOnly/ShowPage/RegisteredApplicants.jsx';
 
-function AdminEnrollmentShow() {
+function AdminRegistrationSessionShow() {
   const csrf_token = document.head.getElementsByTagName('meta')[2].content;
-  const enrollment = JSON.parse(document.getElementById("data").getAttribute("enrollment"));
-  const students = JSON.parse(document.getElementById("data").getAttribute("students"));
+  const registrationSession = JSON.parse(document.getElementById("data").getAttribute("registration_session"));
+  const applicants = JSON.parse(document.getElementById("data").getAttribute("applicants"));
   const [displayConfirmationModal, setDisplayConfirmationModal] = useState(false);
   const [deleteMessage, setDeleteMessage] = useState(null);
   const [deletePath, setDeletePath] = useState(null);
@@ -19,7 +19,7 @@ function AdminEnrollmentShow() {
     phone: "",
     language: "",
     rowID: null,
-    studentID: 0
+    applicantID: 0
   });
 
   const handleChange = (event) => {
@@ -43,17 +43,17 @@ function AdminEnrollmentShow() {
   return (
     <div style={{ height: "95vh" }}>
       <div id='printable' style={{ height: "95vh" }}>
-        {ShowEnrollmentCard(
-          enrollment,
-          students,
+        {ShowRegistrationSessionCard(
+          registrationSession,
+          applicants,
           setDeletePath,
           setDeleteMessage,
           setDisplayConfirmationModal
         )}
-        {EnrolledStudents(
-          students,
+        {RegisteredApplicants(
+          applicants,
           rowEdit,
-          enrollment,
+          registrationSession,
           formValue,
           csrf_token,
           handleChange,
@@ -76,4 +76,4 @@ function AdminEnrollmentShow() {
   );
 }
 
-export default AdminEnrollmentShow;
+export default AdminRegistrationSessionShow;

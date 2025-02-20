@@ -1,8 +1,8 @@
 import React from 'react';
 
-const TableEditForm = (enrollment, formValue, csrf_token) => {
+const TableEditForm = (registrationSession, formValue, csrf_token) => {
   return (
-    <form id="editForm" action={`/admin/enrollments/${enrollment.id}/students/${formValue.studentID}`} method="post">
+    <form id="editForm" action={`/admin/registration_sessions/${registrationSession.id}/applicants/${formValue.applicantID}`} method="post">
       <input type="hidden" name="authenticity_token" value={csrf_token} />
       <input type="hidden" name="_method" value="PATCH" />
       <input type="hidden" name="first_name" value={formValue.firstName} />

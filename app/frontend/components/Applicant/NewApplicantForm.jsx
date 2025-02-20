@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form, Card, Row } from "react-bootstrap";
-import NewStudentFormError from '../Enrollment/Common/NewStudentFormError';
-import StudentParamCheck from '../Enrollment/Common/StudentParamCheck';
-import UserHeaderUI from '~/components/Enrollment/UserHeaderUI.jsx';
+import NewApplicantFormError from '../RegistrationSession/Common/NewApplicantFormError';
+import ApplicantParamCheck from '../RegistrationSession/Common/ApplicantParamCheck';
+import UserHeaderUI from '~/components/RegistrationSession/UserHeaderUI.jsx';
 
-function NewStudentForm(props) {
+function NewApplicantForm(props) {
   const csrf_token = document.head.getElementsByTagName('meta')[2].content;
-  const enrollment_id = document.getElementById("data").getAttribute("enrollmentID");
+  const registrationSessionID = document.getElementById("data").getAttribute("registrationSessionID");
   const errors = JSON.parse(document.getElementById("data").getAttribute("errors"));
-  const studentParams = JSON.parse(document.getElementById("data").getAttribute("student_params"));
-  const [firstName, setFirstName] = useState(StudentParamCheck(studentParams, "first_name") || "");
-  const [lastName, setLastName] = useState(StudentParamCheck(studentParams, "last_name") || "");
-  const [email, setEmail] = useState(StudentParamCheck(studentParams, "email") || "");
-  const [phone, setPhone] = useState(StudentParamCheck(studentParams, "phone")|| "");
-  const [language, setLanguage] = useState(StudentParamCheck(studentParams, "language") || "");
+  const applicantParams = JSON.parse(document.getElementById("data").getAttribute("applicant_params"));
+  const [firstName, setFirstName] = useState(ApplicantParamCheck(applicantParams, "first_name") || "");
+  const [lastName, setLastName] = useState(ApplicantParamCheck(applicantParams, "last_name") || "");
+  const [email, setEmail] = useState(ApplicantParamCheck(applicantParams, "email") || "");
+  const [phone, setPhone] = useState(ApplicantParamCheck(applicantParams, "phone")|| "");
+  const [language, setLanguage] = useState(ApplicantParamCheck(applicantParams, "language") || "");
 
-  const uri = `${props.slash}${props.admin}/enrollments/${enrollment_id}/students`;
+  const uri = `${props.slash}${props.admin}/registration_sessions/${registrationSessionID}/applicants`;
 
   const handleFirstNameChange = (event) => {
     setFirstName(event.target.value);
@@ -41,7 +41,7 @@ function NewStudentForm(props) {
   return (
     <div>{UserHeaderUI(props.admin)}
     <Row style={{ height: "95vh" }}>
-      {NewStudentFormError(errors)}
+      {NewApplicantFormError(errors)}
       <Card className="card mx-auto my-auto" style={{ width: "60%" }}>
         <Card.Title className="text-center" style={{ marginTop: "25px", marginBottom: "20px" }}>
           Please fill out the form below:
@@ -84,4 +84,4 @@ function NewStudentForm(props) {
   );
 }
 
-export default NewStudentForm;
+export default NewApplicantForm;

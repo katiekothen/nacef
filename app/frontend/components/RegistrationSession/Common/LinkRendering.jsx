@@ -1,8 +1,8 @@
 function LinkRendering(capacity, id) {
   if (capacity) {
-    return "/enrollments";
+    return "/registration_sessions";
   } else {
-    return `/enrollments/${id}/students/new`;
+    return `/registration_sessions/${id}/applicants/new`;
   }
 }
 

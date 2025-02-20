@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   #   get "/", to: "pages#home", as: :locale_root
   # end
 
-  # Enrollment and student routes for users
+  # Enrollment and applicant routes for users
   scope "(:locale)", locale: /en|es|ar|ru/ do
-    resources :enrollments, only: [:index, :show] do
-      resources :students, only: [:new, :create]
+    resources :registration_sessions, only: [:index, :show] do
+      resources :applicants, only: [:new, :create]
     end
 
     get "/", to: "pages#home", as: :locale_root
@@ -29,8 +29,8 @@ Rails.application.routes.draw do
 
   # Admin routes
   namespace :admin do
-    resources :enrollments do
-      resources :students, only:[:new, :create, :destroy, :update]
+    resources :registration_sessions do
+      resources :applicants, only:[:new, :create, :destroy, :update]
     end
   end
 end
