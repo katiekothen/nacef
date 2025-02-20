@@ -22,7 +22,7 @@ function UserHeaderUI(userType, registrationSessionCSVData, applicantsCSVData) {
   }
 
   if (userType === "admin") {
-    return (<Navbar className="bg-body-tertiary justify-content-between"> <div /> <div> &emsp; &emsp; &emsp; &emsp; <a href={"/admin/registration_sessions"}>Registration Session Index</a> &emsp; <a href={"/admin/registration_sessions/new"}>New Registration Session</a> &emsp; <CSVLink data={registrationSessionCSVData} filename={"registration_sessions"}>Registration Sessions CSV file</CSVLink> &emsp; <CSVLink data={applicantsCSVData} filename={"applicants"}>Applicants CSV file</CSVLink></div> <div>
+    return (<Navbar className="bg-body-tertiary justify-content-between"> <div /> <div> &emsp; &emsp; &emsp; &emsp; <a href={"/admin/registration_sessions"}>Registration Session Index</a> &emsp; <a href={"/admin/registration_sessions/new"}>New Registration Session</a> &emsp; <CSVLink data={registrationSessionCSVData || '{}'} filename={"registration_sessions"}>Registration Sessions CSV file</CSVLink> &emsp; <CSVLink data={applicantsCSVData || '{}'} filename={"applicants"}>Applicants CSV file</CSVLink></div> <div>
       <form action='/logout' method="post">
       <input type="hidden" name="authenticity_token" value={token} />
       <input type="hidden" name="_method" value="DELETE" />

@@ -5,7 +5,7 @@ class Admin::RegistrationSessionsController < ApplicationController
   def index
     @registration_sessions = RegistrationSession.list_data
     @applicants = Applicant.csv_data
-    @may_registration_sessions = RegistrationSession.list_library_data('Eloise May')
+    @may_registration_sessions = RegistrationSession.list_library_data('Eloise May', params[:locale])
     @delete_confirmation = params[:confirm_delete]
   end
 
