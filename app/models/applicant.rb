@@ -1,5 +1,5 @@
-class Student < ApplicationRecord
-  belongs_to :enrollment
+class Applicant < ApplicationRecord
+  belongs_to :registration_session
 
   validates :first_name, :last_name, :language, presence: true, length: {maximum: 100}
   validates :email, length: {maximum: 100}, format: { with: URI::MailTo::EMAIL_REGEXP }, if: :email_present?
@@ -9,13 +9,13 @@ class Student < ApplicationRecord
   before_save :format_phone
 
   def self.list_data
-    students = all.select(:id, :first_name, :last_name, :email, :phone, :language)
-    students.to_json
+    applicants = all.select(:id, :first_name, :last_name, :email, :phone, :language)
+    applicants.to_json
   end
 
   def self.csv_data
-    students = all.select(:id, :first_name, :last_name, :email, :phone, :language, :enrollment_id)
-    students.to_json
+    applicants = all.select(:id, :first_name, :last_name, :email, :phone, :language, :registration_session_id)
+    applicants.to_json
   end
 
   private
