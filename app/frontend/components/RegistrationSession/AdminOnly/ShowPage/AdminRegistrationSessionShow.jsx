@@ -5,7 +5,7 @@ import RegisteredApplicants from '~/components/RegistrationSession/AdminOnly/Sho
 
 function AdminRegistrationSessionShow() {
   const csrf_token = document.head.getElementsByTagName('meta')[2].content;
-  const registrationSession = JSON.parse(document.getElementById("data").getAttribute("registration_session"));
+  const registrationSession = JSON.parse(document.getElementById("data").getAttribute("registrationSession"));
   const applicants = JSON.parse(document.getElementById("data").getAttribute("applicants"));
   const [displayConfirmationModal, setDisplayConfirmationModal] = useState(false);
   const [deleteMessage, setDeleteMessage] = useState(null);

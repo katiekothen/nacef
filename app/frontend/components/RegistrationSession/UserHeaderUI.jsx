@@ -16,7 +16,11 @@ function UserHeaderUI(userType, registrationSessionCSVData, applicantsCSVData) {
   const toggleLanguage = (value) => {
     const currentURL = window.location.pathname;
     const currentURLParts = currentURL.split("/")
-    currentURLParts[1] = value
+    if (currentURLParts[1] != "registration_sessions") {
+      currentURLParts[1] = value
+    } else {
+      currentURLParts[0] = value
+    };
     const newURL = currentURLParts.join("/")
     window.location.href = newURL
   }

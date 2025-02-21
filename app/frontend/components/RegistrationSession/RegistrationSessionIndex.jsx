@@ -5,18 +5,18 @@ import DeleteConfirmation from '~/components/RegistrationSession/Common/Modals/D
 import DisplayDeleteSuccess from '~/components/RegistrationSession/Common/Modals/DisplayDeleteSuccess.jsx';
 import NewApplicantError from '~/components/RegistrationSession/Common/NewApplicantError.jsx';
 import UserHeaderUI from '~/components/RegistrationSession/UserHeaderUI.jsx';
-import ListLocationRegistrationSessions from '~/components/RegistrationSession/ListLocationRegistrationSessions.jsx';
+import ListRegistrationSessions from '~/components/RegistrationSession/ListRegistrationSessions.jsx';
 
 function RegistrationSessionIndex(props) {
   const csrf_token = document.head.getElementsByTagName('meta')[2].content;
-  const registrationSessions = JSON.parse(document.getElementById("data").getAttribute("registration_sessions"));
+  const registrationSessions = JSON.parse(document.getElementById("data").getAttribute("registrationSessions"));
   const applicants = JSON.parse(document.getElementById("data").getAttribute("applicants"));
-  const mayRegistrationSessions = JSON.parse(document.getElementById("data").getAttribute("may_registration_sessions"));
-  const newApplicantError = document.getElementById("data").getAttribute("new_applicant_error");
-  const deleteConfirmation = document.getElementById("data").getAttribute("delete_confirmation");
+  const newApplicantError = document.getElementById("data").getAttribute("newApplicantError");
+  const deleteConfirmation = document.getElementById("data").getAttribute("deleteConfirmation");
   const [displayConfirmationModal, setDisplayConfirmationModal] = useState(false);
   const [deleteMessage, setDeleteMessage] = useState(null);
   const [deletePath, setDeletePath] = useState(null);
+  console.log(registrationSessions)
 
   const hideConfirmationModal = () => {
     setDisplayConfirmationModal(false);
@@ -27,16 +27,18 @@ function RegistrationSessionIndex(props) {
   };
 
   return (
+    <div>
     <Card border="light">
       {DisplayDeleteSuccess(deleteConfirmation)}
       {NewApplicantError(newApplicantError)}
       {UserHeaderUI(props.admin, registrationSessions, applicants)}
-      <Card.Title style={{ textDecorationLine: "underline", fontSize: "28px", fontWeight: "bold", textAlign: "center", margin: "2%" }}>Eloise May Library Registration Sessions:</Card.Title>
+      <Card.Title style={{ textDecorationLine: "underline", fontSize: "28px", fontWeight: "bold", textAlign: "center", margin: "2%" }}>Modify text later</Card.Title>
       <Row xs={2} md={3} className="g-4 justify-content-center">
-        {ListLocationRegistrationSessions(props.admin, mayRegistrationSessions, setDeletePath, setDeleteMessage, setDisplayConfirmationModal)}
+        {ListRegistrationSessions(props.admin, registrationSessions, setDeletePath, setDeleteMessage, setDisplayConfirmationModal)}
       </Row>
       <DeleteConfirmation showModal={displayConfirmationModal} confirmModal={submitDelete} hideModal={hideConfirmationModal} path={deletePath} message={deleteMessage} authenticity={csrf_token} />
     </Card>
+    </div>
   );
 }
 

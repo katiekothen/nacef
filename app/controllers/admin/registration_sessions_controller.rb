@@ -10,7 +10,7 @@ class Admin::RegistrationSessionsController < ApplicationController
   end
 
   def show
-    @registration_session = RegistrationSession.registration_session_detail(params[:id])
+    @registration_session = RegistrationSession.registration_session_detail(params[:id], "en")
     @applicants = RegistrationSession.find(params[:id]).applicants.list_data
   end
 

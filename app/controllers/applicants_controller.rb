@@ -14,7 +14,7 @@ class ApplicantsController < ApplicationController
       @errors = applicant.errors.messages
       case @errors
       when {}
-        redirect_to confirmation_page_path(applicant, @registration_session)
+        redirect_to confirmation_page_path(applicant, @registration_session, params[:locale])
       else
         redirect_to new_registration_session_applicant_path(errors: @errors, applicant_params: applicant_params)
       end
@@ -26,15 +26,15 @@ class ApplicantsController < ApplicationController
   private
 
   def find_registration_session
-    @registration_session = registration_session.find(params[:registration_session_id])
+    @registration_session = RegistrationSession.find(params[:registration_session_id])
   end
 
   def applicant_params
     params.permit(:first_name, :last_name, :email, :phone, :language)
   end
 
-  def confirmation_page_path(applicant, registration_session)
-    confirmation_path(name: applicant.first_name, time: registration_session.formatted_time,
-                      date: registration_session.formatted_date, location: registration_session.location)
+  def confirmation_page_path(applicant, registration_session, locale)
+    confirmation_path(name: applicant.first_name, time: registration_session.formatted_time(locale),
+                      date: registration_session.formatted_date(locale), location: registration_session.location)
   end
 end

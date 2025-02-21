@@ -1,4 +1,4 @@
-function StudentParamCheck(applicantParams, param) {
+function ApplicantParamCheck(applicantParams, param) {
   if (applicantParams === null) {
     return null
   } else {
@@ -6,4 +6,4 @@ function StudentParamCheck(applicantParams, param) {
   };
 }
 
-export default StudentParamCheck;
+export default ApplicantParamCheck;

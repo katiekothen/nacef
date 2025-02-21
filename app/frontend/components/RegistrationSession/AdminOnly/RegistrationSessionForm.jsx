@@ -10,8 +10,8 @@ import UserHeaderUI from '~/components/RegistrationSession/UserHeaderUI.jsx';
 
 function RegistrationSessionForm(props) {
   const csrf_token = document.head.getElementsByTagName('meta')[2].content;
-  const registrationSessions = JSON.parse(document.getElementById("data").getAttribute("registration_sessions"));
-  const allApplicants = JSON.parse(document.getElementById("data").getAttribute("all_applicants"));
+  const registrationSessions = JSON.parse(document.getElementById("data").getAttribute("registrationSessions"));
+  const allApplicants = JSON.parse(document.getElementById("data").getAttribute("allApplicants"));
   const [location, setLocation] = useState(props.location);
   const [schedule, setSchedule] = useState(props.schedule);
   const [applicants, setApplicants] = useState(props.applicants || 30);
