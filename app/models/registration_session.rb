@@ -5,8 +5,8 @@ class RegistrationSession < ApplicationRecord
   validates :schedule, presence: true
   validates :applicant_limit, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  def self.list_data
-    all.map { |registration_session| registration_session_hash(registration_session, "en") }.to_json
+  def self.list_data(locale="en")
+    all.map { |registration_session| registration_session_hash(registration_session, locale) }.to_json
   end
 
   def self.list_library_data(location, locale)
@@ -21,6 +21,7 @@ class RegistrationSession < ApplicationRecord
   end
 
   def formatted_date(locale)
+    # binding.pry
     if locale == "en"
       schedule.in_time_zone('Mountain Time (US & Canada)').strftime("%A, %B #{schedule.in_time_zone('Mountain Time (US & Canada)').day.ordinalize}")
     elsif locale == "ar"
