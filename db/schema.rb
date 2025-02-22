@@ -10,29 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_26_041859) do
+ActiveRecord::Schema[7.2].define(version: 2025_02_22_025239) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "enrollments", force: :cascade do |t|
-    t.string "location"
-    t.datetime "schedule"
-    t.integer "student_limit"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "students", force: :cascade do |t|
+  create_table "applicants", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
     t.string "phone"
+    t.string "language"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "enrollment_id", null: false
-    t.string "language"
-    t.index ["enrollment_id"], name: "index_students_on_enrollment_id"
+    t.bigint "registration_session_id", null: false
+    t.boolean "interpretation_needed"
+    t.index ["registration_session_id"], name: "index_applicants_on_registration_session_id"
   end
 
-  add_foreign_key "students", "enrollments"
+  create_table "registration_sessions", force: :cascade do |t|
+    t.string "location", default: "Eloise May"
+    t.datetime "schedule"
+    t.integer "applicant_limit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "applicants", "registration_sessions"
 end
