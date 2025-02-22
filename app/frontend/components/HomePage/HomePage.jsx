@@ -6,7 +6,7 @@ function HomePage(props) {
   const locale = document.getElementById("locale").getAttribute("content");
   const here = document.getElementById("here").getAttribute("content");
   const firstMessage = document.getElementById("first_message").getAttribute("content");
-  const secondMessage = document.getElementById("first_message").getAttribute("content");
+  const secondMessage = document.getElementById("second_message").getAttribute("content");
   const link = <a href={`/${locale}/registration_sessions`}>{here}</a>
   return (
     <div>
