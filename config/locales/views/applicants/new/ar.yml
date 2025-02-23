@@ -1,1 +1,12 @@
 ar:
+  first_name: First Name
+  last_name: Last Name
+  email: Email
+  phone: Phone Number
+  interpreter_question: Do you need interpretation from English into another language?
+  language: which language?
+  interpreting_note: We cannot guarantee interpretation of every language, but will do our best to accommodate as many languages as possible.
+  reference__question: How did you hear about this event?
+  first_option: English class at Arapahoe Libraries 
+  second_option: Arapahoe Libraries website or staff member 
+  other: Other 

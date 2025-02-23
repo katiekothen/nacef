@@ -1,1 +1,14 @@
 ru:
+  first_name: Имя
+  last_name: Фамилия
+  email: Адрес электронной почты
+  phone: Номер телефона
+  interpreter_question: Вам нужен переводчик?
+  language: пожалуйста, укажите ваши языковые предпочтения.
+  interpreting_note: Мы не можем гарантировать перевод любого языка, но постараемся удовлетворить потребности наибольшего количества участников.
+  reference__question: Как вы узнали об этом мероприятии? 
+  first_option: English class at Arapahoe Libraries 
+  second_option: Arapahoe Libraries website or staff member 
+  other: Other 
+
+  # Если вы ответили Да на вопрос 5, пожалуйста, укажите ваши языковые предпочтения. 

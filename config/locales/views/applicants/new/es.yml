@@ -1,1 +1,14 @@
 es:
+  first_name: Nombre
+  last_name: apellido
+  email: Dirección de correo electrónico
+  phone: Número de teléfono
+  interpreter_question: ¿Necesita un intérprete?
+  language: escriba su idioma de preferencia
+  interpreting_note: No podemos garantizar la interpretación de todos los idiomas, pero haremos todo lo posible para dar cabida a tantos idiomas como sea posible.
+  reference__question: ¿Cómo te enteraste acerca de este evento? 
+  first_option: English class at Arapahoe Libraries 
+  second_option: Arapahoe Libraries website or staff member 
+  other: Other     
+
+# Si elige Sí en la pregunta 5, escriba su idioma de preferencia 
