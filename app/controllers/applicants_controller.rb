@@ -2,6 +2,7 @@ class ApplicantsController < ApplicationController
   before_action :find_registration_session, only: [:new, :create]
 
   def new
+    @locale = params[:locale]
     redirect_to registration_sessions_path unless @registration_session.applicant_limit_check
     @registration_session_id = params[:registration_session_id]
     @errors = params[:errors].to_json
@@ -30,11 +31,11 @@ class ApplicantsController < ApplicationController
   end
 
   def applicant_params
-    params.permit(:first_name, :last_name, :email, :phone, :language)
+    params.permit(:first_name, :last_name, :email, :phone, :interpretation_needed, :language)
   end
 
   def confirmation_page_path(applicant, registration_session, locale)
     confirmation_path(name: applicant.first_name, time: registration_session.formatted_time(locale),
-                      date: registration_session.formatted_date(locale), location: registration_session.location)
+                      location: registration_session.location, locale: locale)
   end
 end

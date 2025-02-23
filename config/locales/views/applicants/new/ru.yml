@@ -9,6 +9,7 @@ ru:
   reference__question: Как вы узнали об этом мероприятии? 
   first_option: English class at Arapahoe Libraries 
   second_option: Arapahoe Libraries website or staff member 
-  other: Other 
+  other: Other
+  affirmative: Да 
 
   # Если вы ответили Да на вопрос 5, пожалуйста, укажите ваши языковые предпочтения. 

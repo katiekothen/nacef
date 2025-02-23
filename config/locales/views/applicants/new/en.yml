@@ -1,4 +1,5 @@
 en:
+  top_message:
   first_name: First Name
   last_name: Last Name
   email: Email
@@ -9,5 +10,5 @@ en:
   reference__question: How did you hear about this event?
   first_option: English class at Arapahoe Libraries 
   second_option: Arapahoe Libraries website or staff member 
-  other: Other 
-
+  other: Other
+  affirmative: "yes"

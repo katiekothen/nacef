@@ -9,6 +9,7 @@ es:
   reference__question: ¿Cómo te enteraste acerca de este evento? 
   first_option: English class at Arapahoe Libraries 
   second_option: Arapahoe Libraries website or staff member 
-  other: Other     
+  other: Other
+  affirmative: Sí    
 
 # Si elige Sí en la pregunta 5, escriba su idioma de preferencia 

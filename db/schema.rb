@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_02_22_025239) do
     t.string "last_name"
     t.string "email"
     t.string "phone"
-    t.string "language"
+    t.string "language", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "registration_session_id", null: false

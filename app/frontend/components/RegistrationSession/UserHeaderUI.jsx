@@ -7,6 +7,7 @@ function UserHeaderUI(userType, registrationSessionCSVData, applicantsCSVData) {
   const token = document.head.getElementsByTagName('meta')[2].content;
   const currentPageLanguage = window.location.pathname.split("/")[1]
   const [displayLanguage, setDisplayLanguage] = useState(currentPageLanguage)
+  console.log(window.location.pathname)
 
   const handleDisplayLanguageChange = (event) => {
     setDisplayLanguage(event.target.value);
@@ -22,7 +23,7 @@ function UserHeaderUI(userType, registrationSessionCSVData, applicantsCSVData) {
       currentURLParts[0] = value
     };
     const newURL = currentURLParts.join("/")
-    window.location.href = newURL
+    window.location.pathname = newURL
   }
 
   if (userType === "admin") {

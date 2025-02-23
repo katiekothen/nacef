@@ -5,7 +5,7 @@ class CreateApplicants < ActiveRecord::Migration[7.0]
       t.string :last_name
       t.string :email
       t.string :phone
-      t.string :language
+      t.string :language, default: ""
 
       t.timestamps
     end
