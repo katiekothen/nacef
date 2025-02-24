@@ -13,13 +13,18 @@ function RegistrationSessionForm(props) {
   const registrationSessions = JSON.parse(document.getElementById("data").getAttribute("registrationSessions"));
   const allApplicants = JSON.parse(document.getElementById("data").getAttribute("allApplicants"));
   const [location, setLocation] = useState(props.location);
-  const [schedule, setSchedule] = useState(props.schedule);
+  const [startTime, setStartTime] = useState(props.startTime);
+  const [endTime, setEndTime] = useState(props.endTime);
   const [applicants, setApplicants] = useState(props.applicants || 30);
   const method = props.method;
   const path = props.path;
 
-  const handleScheduleChange = (newValue) => {
-    setSchedule(newValue);
+  const handleStartTimeChange = (newValue) => {
+    setStartTime(newValue);
+  };
+
+  const handleEndTimeChange = (newValue) => {
+    setEndTime(newValue);
   };
 
   const handleLocationChange = (event) => {
@@ -47,13 +52,12 @@ function RegistrationSessionForm(props) {
           <input type="hidden" name="authenticity_token" value={csrf_token} />
           {RenderField(method)}
           <input type="hidden" name="location" value={location} />
-          <input type="hidden" name="schedule" value={schedule} />
+          <input type="hidden" name="start_time" value={startTime} />
+          <input type="hidden" name="end_time" value={endTime} />
           <div id="location">
             <Form.Label>Location:</Form.Label>
             <Form.Select name="location" value={location} onChange={handleLocationChange}>
               <option value="Eloise May">Eloise May</option>
-              <option value="Sheridan">Sheridan</option>
-              <option value="Smoky Hill">Smoky Hill</option>
             </Form.Select>
           </div>
           <br />
@@ -70,15 +74,36 @@ function RegistrationSessionForm(props) {
                 <DesktopDatePicker
                   label="Please select a Date"
                   inputFormat="MM/dd/yyyy"
-                  value={schedule}
-                  onChange={handleScheduleChange}
+                  value={startTime}
+                  onChange={handleStartTimeChange}
                   slotProps={{ textField: { variant: 'outlined' } }}
                 />
                 <TimePicker
                   label="Please select a Start Time"
                   name="TimePicker"
-                  value={schedule}
-                  onChange={handleScheduleChange}
+                  value={startTime}
+                  onChange={handleStartTimeChange}
+                  slotProps={{ textField: { variant: 'outlined' } }}
+                />
+              </Stack>
+            </LocalizationProvider>
+          </div>
+          <br />
+          <div>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <Stack spacing={3}>
+                <DesktopDatePicker
+                  label="Please select a Date"
+                  inputFormat="MM/dd/yyyy"
+                  value={endTime}
+                  onChange={handleEndTimeChange}
+                  slotProps={{ textField: { variant: 'outlined' } }}
+                />
+                <TimePicker
+                  label="Please select an End Time"
+                  name="TimePicker"
+                  value={endTime}
+                  onChange={handleEndTimeChange}
                   slotProps={{ textField: { variant: 'outlined' } }}
                 />
               </Stack>
