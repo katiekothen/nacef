@@ -1,19 +1,19 @@
 es:
-  enter_first_name: Please Enter First Name
-  enter_last_name: Please Enter Last Name
-  enter_email: Please Enter Email
-  enter_phone_number: Please Enter Phone Number
-  top_message: Please enter all information in English
+  enter_first_name: escriba el nombre, por favor
+  enter_last_name: escriba el apellido, por favor
+  enter_email: escribe correo electrónico, por favor
+  enter_phone_number: escriba el número de teléfono, por favor
+  top_message: escriba toda la información en inglés, por favor
   first_name: Nombre
   last_name: apellido
   email: Dirección de correo electrónico
   phone: Número de teléfono
   interpreter_question: ¿Necesita un intérprete?
-  language: escriba su idioma de preferencia
+  language: escriba su idioma de preferencia, por favor
   interpreting_note: No podemos garantizar la interpretación de todos los idiomas, pero haremos todo lo posible para dar cabida a tantos idiomas como sea posible.
   reference_question: ¿Cómo te enteraste acerca de este evento? 
-  first_option: English class at Arapahoe Libraries 
-  second_option: Arapahoe Libraries website or staff member 
-  other: Other
+  first_option: Clase de inglés en las bibliotecas Arapahoe
+  second_option: Sitio web o personal de las bibliotecas Arapahoe 
+  other: otra
   affirmative: Sí
-  submit: Submit    
+  submit: enviar    

@@ -1,1 +1,5 @@
 es:
+  available_space: "Available Space:"
+  register: Register for this session
+  title: NACEF 2025 Registration Sessions
+  registration_closed: Registration for this session is closed, but walk-ins are still welcome

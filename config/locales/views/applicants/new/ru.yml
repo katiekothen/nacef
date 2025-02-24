@@ -1,21 +1,21 @@
 ru:
-  enter_first_name: Please Enter First Name
-  enter_last_name: Please Enter Last Name
-  enter_email: Please Enter Email
-  enter_phone_number: Please Enter Phone Number
-  top_message: Please enter all information in English
+  enter_first_name: Пожалуйста, введите имя
+  enter_last_name: Пожалуйста, введите фамилию
+  enter_email: Пожалуйста, введите адрес электронной почты
+  enter_phone_number: Пожалуйста, введите номер телефона
+  top_message: Пожалуйста, вводите всю информацию на английском языке
   first_name: Имя
   last_name: Фамилия
   email: Адрес электронной почты
   phone: Номер телефона
   interpreter_question: Вам нужен переводчик?
-  language: пожалуйста, укажите ваши языковые предпочтения.
+  language: Пожалуйста, введите язык
   interpreting_note: Мы не можем гарантировать перевод любого языка, но постараемся удовлетворить потребности наибольшего количества участников.
   reference_question: Как вы узнали об этом мероприятии? 
-  first_option: English class at Arapahoe Libraries 
-  second_option: Arapahoe Libraries website or staff member 
-  other: Other
+  first_option: Занятия английским в Arapahoe Libraries 
+  second_option: Веб-сайт или сотрудники Arapahoe Libraries
+  other: Другой
   affirmative: Да 
-  submit: Submit
+  submit: отправить
 
   # Если вы ответили Да на вопрос 5, пожалуйста, укажите ваши языковые предпочтения. 
