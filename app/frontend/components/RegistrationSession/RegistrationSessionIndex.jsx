@@ -17,6 +17,7 @@ function RegistrationSessionIndex(props) {
   const [deleteMessage, setDeleteMessage] = useState(null);
   const [deletePath, setDeletePath] = useState(null);
   const locale = document.getElementById("data").getAttribute("locale");
+  const title = document.getElementById("title").getAttribute("content");
   console.log(locale)
 
   const hideConfirmationModal = () => {
@@ -33,7 +34,7 @@ function RegistrationSessionIndex(props) {
       {DisplayDeleteSuccess(deleteConfirmation)}
       {NewApplicantError(newApplicantError)}
       {UserHeaderUI(props.admin, registrationSessions, applicants)}
-      <Card.Title style={{ textDecorationLine: "underline", fontSize: "28px", fontWeight: "bold", textAlign: "center", margin: "2%" }}>NACEF 2025 Registration Sessions</Card.Title>
+      <Card.Title style={{ textDecorationLine: "underline", fontSize: "28px", fontWeight: "bold", textAlign: "center", margin: "2%" }}>{title}</Card.Title>
       <Row xs={2} md={3} className="g-4 justify-content-center">
         {ListRegistrationSessions(props.admin, registrationSessions, setDeletePath, setDeleteMessage, setDisplayConfirmationModal, locale)}
       </Row>
