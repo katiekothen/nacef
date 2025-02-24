@@ -1,6 +1,10 @@
 ar:
-  first_part: شكراً،
-  third_part: "، للتسجيل بموعد ال"
-  fourth_part: للمعرض المهني و التعليمي لحديثي المجئ لأمريكا بمكتبة
-  library_name: "الوويس ماي"
-  last_part:  "يوم ٩ إبريل ٢٠٢٥"
+  first_part_confirmation: شكراً،
+  third_part_confirmation: "، للتسجيل بموعد ال"
+  fourth_part_confirmation: للمعرض المهني و التعليمي لحديثي المجئ لأمريكا بمكتبة
+  library_name_confirmation: "الوويس ماي"
+  last_part_confirmation:  "يوم ٩ إبريل ٢٠٢٥"
+  title_confirmation: تم التسجيل
+  click_confirmation: إضغط
+  here_confirmation: "هنا"
+  return_confirmation: " للرجوع إلى قائمة المواعيد"
