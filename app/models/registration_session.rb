@@ -6,7 +6,7 @@ class RegistrationSession < ApplicationRecord
   validates :applicant_limit, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   def self.list_data(locale="en")
-    all.map { |registration_session| registration_session_hash(registration_session, locale) }.to_json
+    all.order(:start_time).map { |registration_session| registration_session_hash(registration_session, locale) }.to_json
   end
 
   def self.list_library_data(location, locale)
