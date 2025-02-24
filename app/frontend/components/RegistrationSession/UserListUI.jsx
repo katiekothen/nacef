@@ -5,7 +5,7 @@ import ApplicantText from '~/components/RegistrationSession/Common/ApplicantText
 import LinkRendering from '~/components/RegistrationSession/Common/LinkRendering.jsx';
 import ShowDeleteModal from '~/components/RegistrationSession/Common/Modals/ShowDeleteModal.jsx';
 
-function UserListUI(userType, registrationSession, setDeletePath, setDeleteMessage, setDisplayConfirmationModal) {
+function UserListUI(userType, registrationSession, setDeletePath, setDeleteMessage, setDisplayConfirmationModal, locale) {
   if (userType === "admin") {
     return (
       <div id="admin">
@@ -24,7 +24,7 @@ function UserListUI(userType, registrationSession, setDeletePath, setDeleteMessa
       <div id="applicant">
         {ApplicantText(AtCapacity(registrationSession.applicant_limit, registrationSession.applicants), registrationSession)}
         <div className="text-center">
-          <Button disabled={AtCapacity(registrationSession.applicant_limit, registrationSession.applicants)} href={LinkRendering(AtCapacity(registrationSession.applicant_limit, registrationSession.applicants), registrationSession.id)} size="sm" variant="outline-dark">Register for this session</Button>
+          <Button disabled={AtCapacity(registrationSession.applicant_limit, registrationSession.applicants)} href={LinkRendering(AtCapacity(registrationSession.applicant_limit, registrationSession.applicants), registrationSession.id, locale)} size="sm" variant="outline-dark">Register for this session</Button>
         </div>
       </div>
     );
