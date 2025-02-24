@@ -1,6 +1,10 @@
 en:
-  first_part: Thank you,
-  third_part: ", for signing up for the"
-  fourth_part: "session of the New Americans Education and Career Fair at the"
-  library_name: Eloise May
-  last_part: Library on April 9th, 2025.
+  first_part_confirmation: Thank you,
+  third_part_confirmation: ", for signing up for the"
+  fourth_part_confirmation: "session of the New Americans Career and Education Fair at the"
+  library_name_confirmation: Eloise May
+  last_part_confirmation: Library on April 9th, 2025.
+  title_confirmation: Registration Complete
+  click_confirmation: Click
+  here_confirmation: here
+  return_confirmation: to return to the list of registration sessions.

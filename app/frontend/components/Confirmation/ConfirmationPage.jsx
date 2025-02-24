@@ -12,6 +12,10 @@ function ConfirmationPage(props) {
   const fourthPart = document.getElementById("fourth_part").getAttribute("content");
   const location = document.getElementById("location").getAttribute("content");
   const lastPart = document.getElementById("last_part").getAttribute("content");
+  const title = document.getElementById("title").getAttribute("content");
+  const here = document.getElementById("here").getAttribute("content");
+  const returnSentence1 = document.getElementById("click").getAttribute("content");
+  const returnSentence2 = document.getElementById("return").getAttribute("content");
   let textDirection = "ltr"
   if (locale === "ar") {
     textDirection = "rtl"
@@ -26,17 +30,16 @@ function ConfirmationPage(props) {
     <div>
     {UserHeaderUI(props.admin, {}, {})}
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", direction: textDirection}}>
-        <h3 style={{ position: "absolute", top: "27%" }}>Request Received</h3>
+        <h3 style={{ position: "absolute", top: "27%" }}>{title}</h3>
         <div style={{ position: "absolute", top: "35%" }}>
+          <br />
           <p style={{ textAlign: "center" }}>
             {firstPart} {name}{thirdPart} {time} {fourthPart}{' '}
             <a href={`${locationMapLinkDictionary[location]}`}>{libraryName}</a> {lastPart}
           </p>
           <br />
-          <p style={{ textAlign: "center" }}> <b><u>Please take a screenshot or save this page as a pdf for future reference in case it's needed.</u></b></p>
-          <br />
           <p style={{ textAlign: "center" }}>
-            Click <a href={`/${locale}/registration_sessions`}>here</a> to return to the list of registration sessions.
+            {returnSentence1} <a href={`/${locale}/registration_sessions`}>{here}</a>{returnSentence2}
           </p>
         </div>
       </div>

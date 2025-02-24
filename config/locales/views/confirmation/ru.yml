@@ -1,6 +1,10 @@
 ru:
-  first_part: Thank you,
-  third_part: ", for signing up for the"
-  fourth_part: "session of the New Americans Education and Career Fair at the"
-  library_name: Eloise May
-  last_part: Library on April 9th, 2025.
+  first_part_confirmation: Благодарим вас,
+  third_part_confirmation: ", за регистрацию на визит в"
+  fourth_part_confirmation: "на Ярмарку Труда и Образования для Новых Американцев в в библиотеке"
+  library_name_confirmation: Eloise May
+  last_part_confirmation: Library 9 апреля, 2025.
+  title_confirmation: Регистрация закончена
+  click_confirmation: Нажмите
+  here_confirmation: сюда
+  return_confirmation: ", чтобы вернуться к списку сессий регистрации."
