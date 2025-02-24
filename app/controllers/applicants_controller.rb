@@ -36,7 +36,7 @@ class ApplicantsController < ApplicationController
   end
 
   def confirmation_page_path(applicant, registration_session, locale)
-    confirmation_path(name: applicant.first_name, time: registration_session.formatted_time(locale),
+    confirmation_path(name: applicant.first_name, time: registration_session.formatted_time(registration_session.start_time, locale),
                       location: registration_session.location, locale: locale)
   end
 end

@@ -1,4 +1,8 @@
 es:
+  enter_first_name: Please Enter First Name
+  enter_last_name: Please Enter Last Name
+  enter_email: Please Enter Email
+  enter_phone_number: Please Enter Phone Number
   top_message: Please enter all information in English
   first_name: Nombre
   last_name: apellido

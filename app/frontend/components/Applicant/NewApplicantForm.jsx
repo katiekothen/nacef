@@ -12,9 +12,13 @@ function NewApplicantForm(props) {
   const errors = JSON.parse(document.getElementById("data").getAttribute("errors"));
   const applicantParams = JSON.parse(document.getElementById("data").getAttribute("applicantParams"));
   const firstNameDisplay = document.getElementById("first_name").getAttribute("content");
+  const firstNamePlaceholder = document.getElementById("first_name_placeholder").getAttribute("content");
   const lastNameDisplay = document.getElementById("last_name").getAttribute("content");
+  const lastNamePlaceholder = document.getElementById("last_name_placeholder").getAttribute("content");
   const emailDisplay = document.getElementById("email").getAttribute("content");
+  const emailPlaceholder = document.getElementById("email_placeholder").getAttribute("content");
   const phoneDisplay = document.getElementById("phone").getAttribute("content");
+  const phoneNumberPlaceholder = document.getElementById("phone_number_placeholder").getAttribute("content");
   const interpreterQuestion = document.getElementById("interpreter_question").getAttribute("content");
   const affirmative = document.getElementById("affirmative").getAttribute("content");
   const languageDisplay = document.getElementById("language").getAttribute("content");
@@ -32,11 +36,15 @@ function NewApplicantForm(props) {
   const [isChecked, setIsChecked] = useState(false);
   const [language, setLanguage] = useState(ApplicantParamCheck(applicantParams, "language") || "");
   const [referral, setReferral] = useState(ApplicantParamCheck(applicantParams, "referral") || {firstOption});
+  let textDirection = "ltr"
   const interpretationNeeded = {
     false: false,
     true: true
   }
- 
+
+  if (locale === "ar") {
+    textDirection = "rtl"
+  }
 
   const uri = `${props.slash}${props.admin}/registration_sessions/${registrationSessionID}/applicants`;
 
@@ -70,7 +78,7 @@ function NewApplicantForm(props) {
 
   return (
     <div>{UserHeaderUI(props.admin)}
-    <Row style={{ height: "95vh" }}>
+    <Row style={{ height: "95vh", direction: textDirection }}>
       {NewApplicantFormError(errors)}
       <Card className="card mx-auto my-auto" style={{ width: "60%" }}>
         <Card.Title className="text-center" style={{ marginTop: "25px", marginBottom: "20px" }}>
@@ -82,27 +90,27 @@ function NewApplicantForm(props) {
           <input type="hidden" name="interpretation_needed" value={interpretationNeeded[isChecked]} />
           <Form.Group controlId="formFirstName">
             <Form.Label>{firstNameDisplay}</Form.Label>
-            <Form.Control type="text" placeholder="Please Enter First Name" name="first_name" maxLength="100" value={firstName} onChange={handleFirstNameChange} />
+            <Form.Control type="text" placeholder={firstNamePlaceholder} name="first_name" maxLength="100" value={firstName} onChange={handleFirstNameChange} />
           </Form.Group>
           <br />
           <Form.Group controlId="formLastName">
             <Form.Label>{lastNameDisplay}</Form.Label>
-            <Form.Control type="text" placeholder="Please Enter Last Name" name="last_name" maxLength="100" value={lastName} onChange={handleLastNameChange} />
+            <Form.Control type="text" placeholder={lastNamePlaceholder} name="last_name" maxLength="100" value={lastName} onChange={handleLastNameChange} />
           </Form.Group>
           <br />
           <Form.Group controlId="formEmail">
             <Form.Label>{emailDisplay}</Form.Label>
-            <Form.Control type="text" placeholder="Please Enter Email" name="email" value={email} maxLength="100" onChange={handleEmailChange} />
+            <Form.Control type="text" placeholder={emailPlaceholder} name="email" value={email} maxLength="100" onChange={handleEmailChange} />
           </Form.Group>
           <br />
           <Form.Group controlId="formPhone">
             <Form.Label>{phoneDisplay}</Form.Label>
-            <Form.Control type="text" placeholder="Please Enter Phone Number" name="phone" value={phone} onChange={handlePhoneChange} />
+            <Form.Control type="text" placeholder={phoneNumberPlaceholder} name="phone" value={phone} onChange={handlePhoneChange} />
           </Form.Group>
           <br />
           <Form.Group controlId="formInterpretingNeeded">
             <Form.Label>{interpreterQuestion}</Form.Label>
-            <Form.Check type="Checkbox" id="interpreting_checkbox" name="interpreting_checkbox" label={affirmative} checked={isChecked} onChange={handleCheckboxChange}/>
+            <Form.Check type="Checkbox" id="interpreting_checkbox" style={{ width: "5%"}} name="interpreting_checkbox" label={affirmative} checked={isChecked} onChange={handleCheckboxChange}/>
             {isChecked &&
               <div>
                 <br />

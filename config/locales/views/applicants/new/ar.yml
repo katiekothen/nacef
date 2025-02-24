@@ -1,15 +1,19 @@
 ar:
-  top_message: Please enter all information in English
-  first_name: First Name
-  last_name: Last Name
-  email: Email
-  phone: Phone Number
-  interpreter_question: Do you need interpretation from English into another language?
-  language: which language?
-  interpreting_note: We cannot guarantee interpretation of every language, but will do our best to accommodate as many languages as possible.
-  reference_question: How did you hear about this event?
-  first_option: English class at Arapahoe Libraries 
-  second_option: Arapahoe Libraries website or staff member 
-  other: Other
+  enter_first_name: الرجاء إدخال الإسم الأول
+  enter_last_name: الرجاء إدخال إسم العائلة
+  enter_email: الرجاء إدخال البريد الإلكتروني
+  enter_phone_number: الرجاء إدخال رقم الهاتف
+  top_message: الرجاء إدخال البيانات التالية بالإنجليزية
+  first_name: الإسم الأول
+  last_name: إسم العائلة/الإسم الأخير
+  email: البريد الإلكتروني
+  phone: رقم الهاتف
+  interpreter_question: "هل تحتاج الترجمة من اللغة الإنجليزية؟"
+  language: الرجاء تحديد اللغة المراد الترجمة إليها
+  interpreting_note: لا نستطيع ضمان الترجمة إلى جميع اللغات و لكن سنبذل ما بوسعنا لنوفر الترجمة إلى أكثر عددٍ مستطاع
+  reference_question: كيف سمعت/سمعتي عن هذا المعرض؟
+  first_option: دروس اللغة الإنجليزية بمكتبات اراباهو 
+  second_option: موقع مكتبات اراباهو الإلكتروني أو أحد العاملين بالمكتبة
+  other: مصدر آخر 
   affirmative: نعم
-  submit: Submit
+  submit: تقديم
