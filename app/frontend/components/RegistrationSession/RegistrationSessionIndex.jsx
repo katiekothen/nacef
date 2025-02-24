@@ -16,7 +16,9 @@ function RegistrationSessionIndex(props) {
   const [displayConfirmationModal, setDisplayConfirmationModal] = useState(false);
   const [deleteMessage, setDeleteMessage] = useState(null);
   const [deletePath, setDeletePath] = useState(null);
-  console.log(registrationSessions)
+  const locale = document.getElementById("data").getAttribute("locale");
+  const title = document.getElementById("title").getAttribute("content");
+  console.log(locale)
 
   const hideConfirmationModal = () => {
     setDisplayConfirmationModal(false);
@@ -32,9 +34,9 @@ function RegistrationSessionIndex(props) {
       {DisplayDeleteSuccess(deleteConfirmation)}
       {NewApplicantError(newApplicantError)}
       {UserHeaderUI(props.admin, registrationSessions, applicants)}
-      <Card.Title style={{ textDecorationLine: "underline", fontSize: "28px", fontWeight: "bold", textAlign: "center", margin: "2%" }}>Modify text later</Card.Title>
+      <Card.Title style={{ textDecorationLine: "underline", fontSize: "28px", fontWeight: "bold", textAlign: "center", margin: "2%" }}>{title}</Card.Title>
       <Row xs={2} md={3} className="g-4 justify-content-center">
-        {ListRegistrationSessions(props.admin, registrationSessions, setDeletePath, setDeleteMessage, setDisplayConfirmationModal)}
+        {ListRegistrationSessions(props.admin, registrationSessions, setDeletePath, setDeleteMessage, setDisplayConfirmationModal, locale)}
       </Row>
       <DeleteConfirmation showModal={displayConfirmationModal} confirmModal={submitDelete} hideModal={hideConfirmationModal} path={deletePath} message={deleteMessage} authenticity={csrf_token} />
     </Card>

@@ -8,8 +8,9 @@ const root = ReactDOM.createRoot(container);
 root.render(
   <RegistrationSessionForm
     location="Eloise May"
-    schedule={new Date()}
-    students={20}
+    startTime={new Date()}
+    endTime={new Date()}
+    applicants={20}
     path="/admin/registration_sessions"
     method="post"
     admin="admin"

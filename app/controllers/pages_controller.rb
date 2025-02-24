@@ -4,9 +4,9 @@ class PagesController < ApplicationController
   end
 
   def confirmation
+    @locale = params[:locale] || "en"
     @name = params[:name]
     @time = params[:time]
-    @date = params[:date]
     @location = params[:location]
   end
 end

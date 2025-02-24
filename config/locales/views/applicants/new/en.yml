@@ -1,0 +1,19 @@
+en:
+  enter_first_name: Please Enter First Name
+  enter_last_name: Please Enter Last Name
+  enter_email: Please Enter Email
+  enter_phone_number: Please Enter Phone Number
+  top_message: Please enter all information in English
+  first_name: First Name
+  last_name: Last Name
+  email: Email
+  phone: Phone Number
+  interpreter_question: Do you need interpretation from English into another language?
+  language: Please enter language
+  interpreting_note: We cannot guarantee interpretation of every language, but will do our best to accommodate as many languages as possible.
+  reference_question: How did you hear about this event?
+  first_option: English class at Arapahoe Libraries 
+  second_option: Arapahoe Libraries website or staff member 
+  other: Other
+  affirmative: "yes"
+  submit: Submit

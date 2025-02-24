@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Card, Row } from "react-bootstrap";
-import EndTime from '~/components/RegistrationSession/Common/EndTime.jsx';
 import ShowDeleteModal from '~/components/RegistrationSession/Common/Modals/ShowDeleteModal.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPrint } from "@fortawesome/free-solid-svg-icons";
@@ -18,7 +17,7 @@ const ShowRegistrationSessionCard = (registrationSession, applicants, setDeleteP
       </Card.Header>
       <Card.Body style={{ textAlign: "center" }}>
         <Card.Title>{registrationSession.location} — {registrationSession.date}</Card.Title>
-        <Card.Subtitle>{registrationSession.time} — {EndTime(registrationSession.time)}</Card.Subtitle>
+        <Card.Subtitle>{registrationSession.start_time} — {registrationSession.end_time}</Card.Subtitle>
         <br />
         <Card.Text>Applicant Limit: {registrationSession.applicant_limit}</Card.Text>
         <Card.Text>Number of Applicants: {applicants.length}</Card.Text>

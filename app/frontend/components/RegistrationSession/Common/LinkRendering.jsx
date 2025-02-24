@@ -1,8 +1,8 @@
-function LinkRendering(capacity, id) {
+function LinkRendering(capacity, id, locale) {
   if (capacity) {
-    return "/registration_sessions";
+    return `/${locale}/registration_sessions`;
   } else {
-    return `/registration_sessions/${id}/applicants/new`;
+    return `/${locale}/registration_sessions/${id}/applicants/new`;
   }
 }
 

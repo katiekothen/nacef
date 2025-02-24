@@ -1,48 +1,47 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import UserHeaderUI from '~/components/RegistrationSession/UserHeaderUI.jsx';
 
-function ConfirmationPage() {
-  const name = document.getElementById("data").getAttribute("name");
-  const date = document.getElementById("data").getAttribute("date");
-  const time = document.getElementById("data").getAttribute("time");
-  const location = document.getElementById("data").getAttribute("location");
-
+function ConfirmationPage(props) {
+  const name = document.getElementById("name").getAttribute("content");
+  const locale = document.getElementById("locale").getAttribute("content");
+  const firstPart = document.getElementById("first_part").getAttribute("content");
+  const time = document.getElementById("time").getAttribute("content");
+  const thirdPart = document.getElementById("third_part").getAttribute("content");
+  const libraryName = document.getElementById("library_name").getAttribute("content");
+  const fourthPart = document.getElementById("fourth_part").getAttribute("content");
+  const location = document.getElementById("location").getAttribute("content");
+  const lastPart = document.getElementById("last_part").getAttribute("content");
+  const title = document.getElementById("title").getAttribute("content");
+  const here = document.getElementById("here").getAttribute("content");
+  const returnSentence1 = document.getElementById("click").getAttribute("content");
+  const returnSentence2 = document.getElementById("return").getAttribute("content");
+  let textDirection = "ltr"
+  if (locale === "ar") {
+    textDirection = "rtl"
+  }
   const locationMapLinkDictionary = {
     "Eloise May": "https://goo.gl/maps/SCNgdrXSaN9SoVHt5",
-    "Sheridan": "https://goo.gl/maps/6RMRTZ5PUANc6jDd7",
-    "Smoky Hill": "https://goo.gl/maps/7Cij99GWWYapuPX89",
   };
 
   // Split the dictionary to its own part for ease of set up
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-      <h3 style={{ position: "absolute", top: "27%" }}>Request Received</h3>
-      <div style={{ position: "absolute", top: "35%" }}>
-        <p style={{ textAlign: "center" }}>
-          Thank you, {name}, for requesting an appointment for the {time} enrollment session at{' '}
-          <a href={`${locationMapLinkDictionary[location]}`}>{location}</a> Library on {date}.
-        </p>
-        <p style={{ textAlign: "center" }}>
-          <font color="red">
-            <b>
-              <u>Important:</u>
-            </b>
-          </font>{' '}
-          Your request is not yet complete. You will be contacted by the Library ELA program within 3 to 5 business days to confirm your appointment.
-        </p>
-        <p style={{ textAlign: "center" }}> 
-          <b>
-            <u>Please note:</u>
-          </b>{' '}
-          Registering for an enrollment session does not guarantee a spot in a class. Space is limited and will be filled in the order in which we receive your online reservation and the availability of the class you qualify for.
-        </p>
-        <br />
-        <p style={{ textAlign: "center" }}> <b><u>Please take a screenshot or save this page as a pdf for future reference in case it's needed.</u></b></p>
-        <br />
-        <p style={{ textAlign: "center" }}>
-          Click <a href="/enrollments">here</a> to return to the list of enrollments.
-        </p>
+    <div>
+    {UserHeaderUI(props.admin, {}, {})}
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", direction: textDirection}}>
+        <h3 style={{ position: "absolute", top: "27%" }}>{title}</h3>
+        <div style={{ position: "absolute", top: "35%" }}>
+          <br />
+          <p style={{ textAlign: "center" }}>
+            {firstPart} {name}{thirdPart} {time} {fourthPart}{' '}
+            <a href={`${locationMapLinkDictionary[location]}`}>{libraryName}</a> {lastPart}
+          </p>
+          <br />
+          <p style={{ textAlign: "center" }}>
+            {returnSentence1} <a href={`/${locale}/registration_sessions`}>{here}</a>{returnSentence2}
+          </p>
+        </div>
       </div>
     </div>
   );

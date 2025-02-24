@@ -1,11 +1,17 @@
 <%= vite_javascript_tag 'entrypoints/applicants/confirmation.jsx' %>
 
-<div 
-    id="data" 
-    name="<%= @name %>" 
-    location="<%= @location %>" 
-    time="<%= @time %>" 
-    date="<%= @date %>"
-/>
+<div id="name" content="<%= @name %>" />
+<div id="locale" content="<%= @locale %>">
+<div id="time" content="<%= @time %>" />
+<div id="location" content="<%= @location %>" />
+<div id="first_part" content="<%= I18n.t :first_part_confirmation %>" />
+<div id="third_part" content="<%= I18n.t :third_part_confirmation %>" />
+<div id="fourth_part" content="<%= I18n.t :fourth_part_confirmation %>" />
+<div id="library_name" content="<%= I18n.t :library_name_confirmation %>" />
+<div id="last_part" content="<%= I18n.t :last_part_confirmation %>" />
+<div id="here" content="<%= I18n.t :here_confirmation %>" />
+<div id="click" content="<%= I18n.t :click_confirmation %>" />
+<div id="title" content="<%= I18n.t :title_confirmation %>" />
+<div id="return" content="<%= I18n.t :return_confirmation %>" />
 
 <div id="confirmation" />

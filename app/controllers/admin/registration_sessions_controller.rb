@@ -5,7 +5,6 @@ class Admin::RegistrationSessionsController < ApplicationController
   def index
     @registration_sessions = RegistrationSession.list_data
     @applicants = Applicant.csv_data
-    @may_registration_sessions = RegistrationSession.list_library_data('Eloise May', params[:locale])
     @delete_confirmation = params[:confirm_delete]
   end
 
@@ -24,7 +23,8 @@ class Admin::RegistrationSessionsController < ApplicationController
     @all_applicants = Applicant.csv_data
     @registration_session_id = @registration_session.id
     @location = @registration_session.location
-    @schedule = @registration_session.schedule
+    @start_time = @registration_session.start_time
+    @end_time = @registration_session.end_time
     @applicants = @registration_session.applicant_limit
   end
 
@@ -54,6 +54,6 @@ class Admin::RegistrationSessionsController < ApplicationController
   end
 
   def registration_session_params
-    params.permit(:location, :schedule, :applicant_limit)
+    params.permit(:location, :start_time, :end_time, :applicant_limit)
   end
 end
