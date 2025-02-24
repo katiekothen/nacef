@@ -8,6 +8,7 @@ import UserHeaderUI from '~/components/RegistrationSession/UserHeaderUI.jsx';
 function NewApplicantForm(props) {
   const csrf_token = document.head.getElementsByTagName('meta')[2].content;
   const registrationSessionID = document.getElementById("data").getAttribute("registrationSessionID");
+  const locale = document.getElementById("data").getAttribute("locale");
   const errors = JSON.parse(document.getElementById("data").getAttribute("errors"));
   const applicantParams = JSON.parse(document.getElementById("data").getAttribute("applicantParams"));
   const firstNameDisplay = document.getElementById("first_name").getAttribute("content");
@@ -22,13 +23,20 @@ function NewApplicantForm(props) {
   const firstOption = document.getElementById("first_option").getAttribute("content");
   const secondOption = document.getElementById("second_option").getAttribute("content");
   const other = document.getElementById("other").getAttribute("content");
+  const topMessage = document.getElementById("top_message").getAttribute("content");
+  const submit = document.getElementById("submit").getAttribute("content");
   const [firstName, setFirstName] = useState(ApplicantParamCheck(applicantParams, "first_name") || "");
   const [lastName, setLastName] = useState(ApplicantParamCheck(applicantParams, "last_name") || "");
   const [email, setEmail] = useState(ApplicantParamCheck(applicantParams, "email") || "");
   const [phone, setPhone] = useState(ApplicantParamCheck(applicantParams, "phone")|| "");
   const [isChecked, setIsChecked] = useState(false);
   const [language, setLanguage] = useState(ApplicantParamCheck(applicantParams, "language") || "");
-  console.log(affirmative)
+  const [referral, setReferral] = useState(ApplicantParamCheck(applicantParams, "referral") || {firstOption});
+  const interpretationNeeded = {
+    false: false,
+    true: true
+  }
+ 
 
   const uri = `${props.slash}${props.admin}/registration_sessions/${registrationSessionID}/applicants`;
 
@@ -56,16 +64,22 @@ function NewApplicantForm(props) {
     setLanguage(event.target.value);
   };
 
+  const handleReferralChange = (event) => {
+    setReferral(event.target.value);
+  };
+
   return (
     <div>{UserHeaderUI(props.admin)}
     <Row style={{ height: "95vh" }}>
       {NewApplicantFormError(errors)}
       <Card className="card mx-auto my-auto" style={{ width: "60%" }}>
         <Card.Title className="text-center" style={{ marginTop: "25px", marginBottom: "20px" }}>
-          Please fill out the form below:
+          {topMessage}
         </Card.Title>
         <Form action={uri} method="post">
           <input type="hidden" name="authenticity_token" value={csrf_token} />
+          <input type="hidden" name="locale" value={locale} />
+          <input type="hidden" name="interpretation_needed" value={interpretationNeeded[isChecked]} />
           <Form.Group controlId="formFirstName">
             <Form.Label>{firstNameDisplay}</Form.Label>
             <Form.Control type="text" placeholder="Please Enter First Name" name="first_name" maxLength="100" value={firstName} onChange={handleFirstNameChange} />
@@ -88,18 +102,29 @@ function NewApplicantForm(props) {
           <br />
           <Form.Group controlId="formInterpretingNeeded">
             <Form.Label>{interpreterQuestion}</Form.Label>
-            <Form.Check type="Checkbox" id="interpreting_needed_yes" name="interpreting_needed" label={affirmative} checked={isChecked} onChange={handleCheckboxChange}/>
+            <Form.Check type="Checkbox" id="interpreting_checkbox" name="interpreting_checkbox" label={affirmative} checked={isChecked} onChange={handleCheckboxChange}/>
             {isChecked &&
               <div>
                 <br />
-                <Form.Control type="text" placeholder="Please Enter Language(s)" name="language" maxLength="100" value={language} onChange={handleLanguageChange} />
+                <Form.Control type="text" placeholder={languageDisplay} name="language" maxLength="100" value={language} onChange={handleLanguageChange} />
+                <br />
+                {interpretingNote}
               </div>
             }
           </Form.Group>
           <br />
+          <Form.Group controlId="referral">
+            <Form.Label>{referenceQuestion}</Form.Label>
+            <Form.Select name="referral" value={referral} onChange={handleReferralChange}>
+              <option value={firstOption}>{firstOption}</option>
+              <option value={secondOption}>{secondOption}</option>
+              <option value={other}>{other}</option>
+            </Form.Select>
+          </Form.Group>
+          <br />
           <div className="text-center">
             <Button size="sm" variant="outline-primary" style={{ margin: "25px" }} type="submit">
-              Submit
+              {submit}
             </Button>
           </div>
         </Form>

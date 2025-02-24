@@ -10,12 +10,13 @@ class ApplicantsController < ApplicationController
   end
 
   def create
+    locale = params[:locale] || "en"
     if @registration_session.applicant_limit_check
       applicant = @registration_session.applicants.create(applicant_params)
       @errors = applicant.errors.messages
       case @errors
       when {}
-        redirect_to confirmation_page_path(applicant, @registration_session, params[:locale])
+        redirect_to confirmation_page_path(applicant, @registration_session, locale)
       else
         redirect_to new_registration_session_applicant_path(errors: @errors, applicant_params: applicant_params)
       end
@@ -31,7 +32,7 @@ class ApplicantsController < ApplicationController
   end
 
   def applicant_params
-    params.permit(:first_name, :last_name, :email, :phone, :interpretation_needed, :language)
+    params.permit(:first_name, :last_name, :email, :phone, :interpretation_needed, :language, :referral)
   end
 
   def confirmation_page_path(applicant, registration_session, locale)

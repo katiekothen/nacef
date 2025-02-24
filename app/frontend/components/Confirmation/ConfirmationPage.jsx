@@ -29,7 +29,7 @@ function ConfirmationPage() {
         <p style={{ textAlign: "center" }}> <b><u>Please take a screenshot or save this page as a pdf for future reference in case it's needed.</u></b></p>
         <br />
         <p style={{ textAlign: "center" }}>
-          Click <a href={`/${locale}/registration_sessions`}>here</a> to return to the list of enrollments.
+          Click <a href={`/${locale}/registration_sessions`}>here</a> to return to the list of registration sessions.
         </p>
       </div>
     </div>

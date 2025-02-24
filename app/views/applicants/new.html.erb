@@ -5,7 +5,7 @@
     registrationSessionID="<%= @registration_session_id %>"
     errors="<%= @errors %>"
     applicantParams="<%= @applicant_params %>"
-    locale="<%= @locale %>"
+    locale="<%= @locale || "en" %>"
 />
 
 <div id="first_name" content="<%= I18n.t :first_name %>">
@@ -20,5 +20,7 @@
 <div id="second_option" content="<%= I18n.t :second_option %>">
 <div id="other" content="<%= I18n.t :other %>">
 <div id="affirmative" content="<%= I18n.t :affirmative %>">
+<div id="top_message" content="<%= I18n.t :top_message %>">
+<div id="submit" content="<%= I18n.t :submit %>">
 
 <div id="new" />
