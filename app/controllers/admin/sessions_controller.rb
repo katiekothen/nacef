@@ -7,7 +7,7 @@ class Admin::SessionsController < ApplicationController
   def create
     username = params[:username]
     password = params[:password]
-    if username == Rails.application.credentials.user && Rails.application.credentials.password == password
+    if username == Rails.application.credentials.username && Rails.application.credentials.password == password
       session[:admin] = 1
       redirect_to '/admin/registration_sessions'
     else
