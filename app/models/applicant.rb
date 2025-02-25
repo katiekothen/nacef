@@ -9,7 +9,7 @@ class Applicant < ApplicationRecord
   before_save :format_phone
 
   def self.list_data
-    applicants = all.select(:id, :first_name, :last_name, :email, :phone, :language)
+    applicants = all.select(:id, :first_name, :last_name, :email, :phone, :interpretation_needed, :language, :referral, :registration_session_id)
     applicants.to_json
   end
 

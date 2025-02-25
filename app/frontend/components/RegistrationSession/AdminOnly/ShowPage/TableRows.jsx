@@ -14,11 +14,14 @@ function TableRows(rowEdit, formValue, applicant, index, handleChange, registrat
       lastName: applicant.last_name,
       email: applicant.email,
       phone: applicant.phone,
+      interpreting: applicant.interpretation_needed,
       language: applicant.language,
+      referral: applicant.referral,
       rowID: index,
       applicantID: applicant.id
     });
   }
+  console.log(applicant.interpretation_needed)
 
   if (rowEdit === true && formValue.rowID === index) {
     return (
@@ -28,7 +31,9 @@ function TableRows(rowEdit, formValue, applicant, index, handleChange, registrat
         <td><MDBInput name="lastName" className="text-center align-middle" type='text' onChange={handleChange} value={formValue.lastName}></MDBInput></td>
         <td><MDBInput name="email" className="text-center align-middle" type='text' onChange={handleChange} value={formValue.email}></MDBInput></td>
         <td><MDBInput name="phone" className="text-center align-middle" type='text' onChange={handleChange} value={formValue.phone}></MDBInput></td>
+        <td><MDBInput name="interpreting" className="text-center align-middle" type='text' onChange={handleChange} value={formValue.interpreting}></MDBInput></td>
         <td><MDBInput name="language" className="text-center align-middle" type='text' onChange={handleChange} value={formValue.language}></MDBInput></td>
+        <td><MDBInput name="referral" className="text-center align-middle" type='text' onChange={handleChange} value={formValue.referral}></MDBInput></td>
         <td>
           <Button name="pen" style={{ outline: "none", border: "0", boxShadow: "none", backgroundColor: "transparent" }} onClick={() => clickToEditRow(applicant, index)}> <Pencil color="blue" /> </Button>
           <Button name="save" style={{ outline: "none", border: "0", boxShadow: "none", backgroundColor: "transparent" }} type="submit" form={"editForm"}> <FontAwesomeIcon icon={faSave} color="blue" /> </Button>
@@ -44,7 +49,9 @@ function TableRows(rowEdit, formValue, applicant, index, handleChange, registrat
         <td className="text-center align-middle" style={{ padding: "0px" }}>{applicant.last_name}</td>
         <td className="text-center align-middle" style={{ padding: "0px" }}>{applicant.email}</td>
         <td className="text-center align-middle" style={{ padding: "0px" }}>{applicant.phone}</td>
+        <td className="text-center align-middle" style={{ padding: "0px" }}>{applicant.interpretation_needed.toString()}</td>
         <td className="text-center align-middle" style={{ padding: "0px" }}>{applicant.language}</td>
+        <td className="text-center align-middle" style={{ padding: "0px" }}>{applicant.referral}</td>
         <td className="text-center align-middle" style={{ padding: "0px" }}>
           <Button name="pen" style={{ outline: "none", border: "0", boxShadow: "none", backgroundColor: "transparent" }} onClick={() => clickToEditRow(applicant, index)}> <Pencil color="blue" /> </Button>
           <Button name="save" style={{ outline: "none", border: "0", boxShadow: "none", backgroundColor: "transparent" }} disabled={true}> <FontAwesomeIcon icon={faSave} color="lightgrey" /> </Button>
