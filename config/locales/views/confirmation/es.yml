@@ -1,10 +1,10 @@
 es:
-  first_part_confirmation: Thank you,
-  third_part_confirmation: ", for signing up for the"
-  fourth_part_confirmation: "session of the New Americans Career and Education Fair at the"
+  first_part_confirmation: Gracias,
+  third_part_confirmation: ", por registrarte en la sesión de las"
+  fourth_part_confirmation: "para la Feria de Carreras y Educación para Nuevos Americanos en la Biblioteca"
   library_name_confirmation: Eloise May
-  last_part_confirmation: Library on April 9th, 2025.
-  title_confirmation: Registration Complete
-  click_confirmation: Click
-  here_confirmation: here
-  return_confirmation: " to return to the list of registration sessions."
+  last_part_confirmation: el 9 de mayo de 2025.
+  title_confirmation: Registro completado
+  click_confirmation: Haga clic
+  here_confirmation: aquí
+  return_confirmation: " para regresar a la lista de sesiones de inscripción."
