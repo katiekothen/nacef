@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # Enrollment and applicant routes for users
 
   # Admin routes
   namespace :admin do
@@ -9,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   # Login page
-  get '/login', to: 'admin/sessions#new'
+  get '/admin/login', to: 'admin/sessions#new'
   post '/admin/sessions/create', to: 'admin/sessions#create'
 
   #Logout page

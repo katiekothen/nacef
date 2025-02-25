@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   around_action :switch_locale
 
   def authenticate_user!
-    redirect_to login_path unless current_user
+    redirect_to admin_login_path unless current_user
   end
 
   def current_user

@@ -11,7 +11,7 @@ class Admin::SessionsController < ApplicationController
       session[:admin] = 1
       redirect_to admin_registration_sessions_path
     else
-      redirect_to login_path
+      redirect_to admin_login_path
     end
   end
 
