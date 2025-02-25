@@ -1,9 +1,9 @@
 ar:
   time:
-    AM: "صباحاً"
-    PM: "مساءً"
+    am: "صباحاً"
+    pm: "مساءً"
     formats:
-      default: "%I:%M %p"
+      default: "%I:%M %P"
   date:
     formats:
       default: "%A، %d %B %Y"
