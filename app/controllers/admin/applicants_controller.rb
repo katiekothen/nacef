@@ -1,4 +1,5 @@
 class Admin::ApplicantsController < ApplicationController
+  skip_around_filter :switch_locale
   before_action :set_registration_session, only: [:create]
   before_action :set_applicant, only: [:update, :destroy]
   before_action :authenticate_user!

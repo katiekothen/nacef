@@ -1,4 +1,6 @@
 class Admin::SessionsController < ApplicationController
+  skip_around_filter :switch_locale
+  
   def new
   end
 

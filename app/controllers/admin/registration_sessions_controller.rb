@@ -1,4 +1,5 @@
 class Admin::RegistrationSessionsController < ApplicationController
+  skip_around_filter :switch_locale
   before_action :set_registration_session, only: [:edit, :update, :destroy]
   before_action :authenticate_user!
 
