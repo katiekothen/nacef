@@ -8,6 +8,13 @@ Rails.application.routes.draw do
     end
   end
 
+  # Login page
+  get '/login', to: 'admin/sessions#new'
+  post '/admin/sessions/create', to: 'admin/sessions#create'
+
+  #Logout page
+  delete '/logout', to: 'admin/sessions#destroy'
+
   scope "(:locale)", locale: /en|es|ar|ru/ do
     resources :registration_sessions, only: [:index, :show] do
       resources :applicants, only: [:new, :create]
@@ -17,11 +24,4 @@ Rails.application.routes.draw do
 
     get '/confirmation', to: 'pages#confirmation'
   end
-
-    # Login page
-    get '/login', to: 'admin/sessions#new'
-    post '/admin/sessions/create', to: 'admin/sessions#create'
-  
-    #Logout page
-    delete '/logout', to: 'admin/sessions#destroy'
 end
