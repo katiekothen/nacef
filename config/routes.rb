@@ -1,16 +1,12 @@
 Rails.application.routes.draw do
-
+  get '/admin/login', to: 'admin/sessions#new'
+  post '/admin/sessions/create', to: 'admin/sessions#create'
   # Admin routes
   namespace :admin do
     resources :registration_sessions do
       resources :applicants, only:[:new, :create, :destroy, :update]
     end
   end
-
-  # Login page
-  get '/admin/login', to: 'admin/sessions#new'
-  post '/admin/sessions/create', to: 'admin/sessions#create'
-
   #Logout page
   delete '/logout', to: 'admin/sessions#destroy'
 

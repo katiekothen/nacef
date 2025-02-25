@@ -9,15 +9,15 @@ class Admin::SessionsController < ApplicationController
     password = params[:password]
     if username == Rails.application.credentials.user && Rails.application.credentials.password == password
       session[:admin] = 1
-      redirect_to admin_registration_sessions_path
+      redirect_to '/admin/registration_sessions'
     else
-      redirect_to admin_login_path
+      redirect_to '/admin/login'
     end
   end
 
   def destroy
     session[:admin] = nil
 
-    redirect_to login_path
+    redirect_to '/admin/login'
   end
 end
