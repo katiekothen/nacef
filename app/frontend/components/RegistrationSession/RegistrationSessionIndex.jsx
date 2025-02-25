@@ -18,7 +18,7 @@ function RegistrationSessionIndex(props) {
   const [deletePath, setDeletePath] = useState(null);
   const locale = document.getElementById("data").getAttribute("locale");
   const title = document.getElementById("title").getAttribute("content");
-  console.log(locale)
+  
 
   const hideConfirmationModal = () => {
     setDisplayConfirmationModal(false);

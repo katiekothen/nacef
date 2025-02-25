@@ -1,6 +1,10 @@
 es:
-  first_part: Thank you,
-  third_part: ", for signing up for the"
-  fourth_part: "session of the New Americans Education and Career Fair at the"
-  library_name: Eloise May
-  last_part: Library on April 9th, 2025.
+  first_part_confirmation: Gracias,
+  third_part_confirmation: ", por registrarte en la sesión de las"
+  fourth_part_confirmation: "para la Feria de Carreras y Educación para Nuevos Americanos en la Biblioteca"
+  library_name_confirmation: Eloise May
+  last_part_confirmation: el 9 de mayo de 2025.
+  title_confirmation: Registro completado
+  click_confirmation: Haga clic
+  here_confirmation: aquí
+  return_confirmation: " para regresar a la lista de sesiones de inscripción."
