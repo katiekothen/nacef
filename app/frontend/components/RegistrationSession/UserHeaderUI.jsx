@@ -7,7 +7,6 @@ function UserHeaderUI(userType, registrationSessionCSVData, applicantsCSVData) {
   const token = document.head.getElementsByTagName('meta')[2].content;
   const currentPageLanguage = window.location.pathname.split("/")[1]
   const [displayLanguage, setDisplayLanguage] = useState(currentPageLanguage)
-  console.log(window.location.pathname)
 
   const handleDisplayLanguageChange = (event) => {
     setDisplayLanguage(event.target.value);
