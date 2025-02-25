@@ -1,4 +1,7 @@
 ar:
+time:
+    AM: "صباحاً"
+    PM: "مساءً"
   time:
     formats:
       default: "%I:%M %p"
