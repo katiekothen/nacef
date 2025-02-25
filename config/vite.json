@@ -1,7 +1,7 @@
 {
   "all": {
     "sourceCodeDir": "app/frontend",
-    "watchAdditionalPaths": ["app/frontend/admin"]
+    "watchAdditionalPaths": ["app/frontend/entrypoints/admin/*"]
   },
   "development": {
     "autoBuild": false,
