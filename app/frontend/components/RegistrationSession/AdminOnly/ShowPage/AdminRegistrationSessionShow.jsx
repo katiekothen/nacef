@@ -17,7 +17,9 @@ function AdminRegistrationSessionShow() {
     lastName: "",
     email: "",
     phone: "",
+    interpreting: "",
     language: "",
+    referral: "",
     rowID: null,
     applicantID: 0
   });
