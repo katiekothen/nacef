@@ -1,5 +1,6 @@
 class ApplicantsController < ApplicationController
   before_action :find_registration_session, only: [:new, :create]
+  include ApplicationHelper
 
   def new
     @locale = params[:locale]
@@ -7,6 +8,7 @@ class ApplicantsController < ApplicationController
     @registration_session_id = params[:registration_session_id]
     @errors = params[:errors].to_json
     @applicant_params = params[:applicant_params].to_json
+    @mobile = mobile_device?
   end
 
   def create

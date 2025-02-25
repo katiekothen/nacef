@@ -9,6 +9,7 @@ function NewApplicantForm(props) {
   const csrf_token = document.head.getElementsByTagName('meta')[2].content;
   const registrationSessionID = document.getElementById("data").getAttribute("registrationSessionID");
   const locale = document.getElementById("data").getAttribute("locale");
+  const mobile = document.getElementById("data").getAttribute("mobile");
   const errors = JSON.parse(document.getElementById("data").getAttribute("errors"));
   const applicantParams = JSON.parse(document.getElementById("data").getAttribute("applicantParams"));
   const firstNameDisplay = document.getElementById("first_name").getAttribute("content");
@@ -26,6 +27,7 @@ function NewApplicantForm(props) {
   const referenceQuestion = document.getElementById("reference_question").getAttribute("content");
   const firstOption = document.getElementById("first_option").getAttribute("content");
   const secondOption = document.getElementById("second_option").getAttribute("content");
+  const thirdOption = document.getElementById("third_option").getAttribute("content");
   const other = document.getElementById("other").getAttribute("content");
   const topMessage = document.getElementById("top_message").getAttribute("content");
   const submit = document.getElementById("submit").getAttribute("content");
@@ -35,7 +37,10 @@ function NewApplicantForm(props) {
   const [phone, setPhone] = useState(ApplicantParamCheck(applicantParams, "phone")|| "");
   const [isChecked, setIsChecked] = useState(false);
   const [language, setLanguage] = useState(ApplicantParamCheck(applicantParams, "language") || "");
-  const [referral, setReferral] = useState(ApplicantParamCheck(applicantParams, "referral") || {firstOption});
+  const [referral, setReferral] = useState(ApplicantParamCheck(applicantParams, "referral") || {secondOption});
+  let width = "4%"
+
+
   let textDirection = "ltr"
   const interpretationNeeded = {
     false: false,
@@ -45,6 +50,11 @@ function NewApplicantForm(props) {
   if (locale === "ar") {
     textDirection = "rtl"
   }
+
+  if (mobile === "true") {
+    width = "10%"
+  }
+
 
   const uri = `${props.slash}${props.admin}/registration_sessions/${registrationSessionID}/applicants`;
 
@@ -80,7 +90,7 @@ function NewApplicantForm(props) {
     <div>{UserHeaderUI(props.admin)}
     <Row style={{ height: "95vh", direction: textDirection }}>
       {NewApplicantFormError(errors)}
-      <Card className="card mx-auto my-auto" style={{ width: "60%" }}>
+      <Card className="card mx-auto my-auto" style={{ width: "80%" }}>
         <Card.Title className="text-center" style={{ marginTop: "25px", marginBottom: "20px" }}>
           {topMessage}
         </Card.Title>
@@ -110,7 +120,7 @@ function NewApplicantForm(props) {
           <br />
           <Form.Group controlId="formInterpretingNeeded">
             <Form.Label>{interpreterQuestion}</Form.Label>
-            <Form.Check type="Checkbox" id="interpreting_checkbox" style={{ width: "5%"}} name="interpreting_checkbox" label={affirmative} checked={isChecked} onChange={handleCheckboxChange}/>
+            <Form.Check type="Checkbox" id="interpreting_checkbox" style={{ width: width}} name="interpreting_checkbox" label={affirmative} checked={isChecked} onChange={handleCheckboxChange}/>
             {isChecked &&
               <div>
                 <br />
@@ -124,8 +134,9 @@ function NewApplicantForm(props) {
           <Form.Group controlId="referral">
             <Form.Label>{referenceQuestion}</Form.Label>
             <Form.Select name="referral" value={referral} onChange={handleReferralChange}>
-              <option value={firstOption}>{firstOption}</option>
               <option value={secondOption}>{secondOption}</option>
+              <option value={firstOption}>{firstOption}</option>
+              <option value={thirdOption}>{secondOption}</option>
               <option value={other}>{other}</option>
             </Form.Select>
           </Form.Group>
