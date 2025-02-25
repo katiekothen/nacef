@@ -37,7 +37,7 @@ function NewApplicantForm(props) {
   const [phone, setPhone] = useState(ApplicantParamCheck(applicantParams, "phone")|| "");
   const [isChecked, setIsChecked] = useState(false);
   const [language, setLanguage] = useState(ApplicantParamCheck(applicantParams, "language") || "");
-  const [referral, setReferral] = useState(ApplicantParamCheck(applicantParams, "referral") || {secondOption});
+  const [referral, setReferral] = useState(ApplicantParamCheck(applicantParams, "referral") || "Arapahoe Libraries website or staff member");
   let width = "4%"
 
 
@@ -134,10 +134,10 @@ function NewApplicantForm(props) {
           <Form.Group controlId="referral">
             <Form.Label>{referenceQuestion}</Form.Label>
             <Form.Select name="referral" value={referral} onChange={handleReferralChange}>
-              <option value={secondOption}>{secondOption}</option>
-              <option value={firstOption}>{firstOption}</option>
-              <option value={thirdOption}>{secondOption}</option>
-              <option value={other}>{other}</option>
+              <option value="Arapahoe Libraries website or staff member">{secondOption}</option>
+              <option value="English class at Arapahoe Libraries">{firstOption}</option>
+              <option value="Local organization">{thirdOption}</option>
+              <option value="Other">{other}</option>
             </Form.Select>
           </Form.Group>
           <br />

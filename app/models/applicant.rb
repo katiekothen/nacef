@@ -14,7 +14,7 @@ class Applicant < ApplicationRecord
   end
 
   def self.csv_data
-    applicants = all.select(:id, :first_name, :last_name, :email, :phone, :language, :registration_session_id)
+    applicants = all.select(:id, :first_name, :last_name, :email, :phone, :interpretation_needed, :language, :referral, :registration_session_id)
     applicants.to_json
   end
 
