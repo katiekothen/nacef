@@ -9,6 +9,7 @@
     "build:css": "echo skipped"
   },
   "dependencies": {
+    "@base-ui-components/react": "^1.0.0-alpha.6",
     "@date-io/date-fns": "^3.2.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -16,22 +17,21 @@
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@mui/base": "^5.0.0-beta.69",
     "@mui/lab": "^6.0.0-beta.28",
     "@mui/material": "^6.4.5",
     "@mui/system": "^6.4.3",
     "@mui/x-date-pickers": "^7.27.0",
     "@vitejs/plugin-react": "^4.3.4",
     "bootstrap": "^5.3.3",
-    "date-fns": "^4.1.0",
+    "date-fns": "^3.6.0",
     "mdb-react-ui-kit": "^9.0.0",
     "print-js": "^1.6.0",
-    "react": "^19.0.0",
+    "react": "^18.3.1",
     "react-bootstrap": "^2.10.9",
     "react-bootstrap-icons": "^1.11.5",
     "react-csv": "^2.2.2",
     "react-datetime-picker": "^6.0.1",
-    "react-dom": "^19.0.0",
+    "react-dom": "^18.3.1",
     "react-table": "^7.8.0"
   }
 }
