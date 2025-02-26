@@ -5,9 +5,10 @@
     registrationSessionID="<%= @registration_session_id %>"
     errors="<%= @errors %>"
     applicantParams="<%= @applicant_params %>"
-    locale="<%= @locale || "en" %>"
     mobile="<%= @mobile %>"
 />
+
+<div id="locale" content="<%= @locale %>"/>
 
 <div id="first_name_placeholder" content="<%= I18n.t :enter_first_name %>">
 <div id="last_name_placeholder" content="<%= I18n.t :enter_last_name %>">

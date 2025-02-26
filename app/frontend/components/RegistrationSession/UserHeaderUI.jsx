@@ -5,7 +5,7 @@ import { CSVLink } from "react-csv";
 
 function UserHeaderUI(userType, registrationSessionCSVData, applicantsCSVData) {
   const token = document.head.getElementsByTagName('meta')[2].content;
-  const currentPageLanguage = window.location.pathname.split("/")[1]
+  const currentPageLanguage = document.getElementById("locale").getAttribute("content") || window.location.pathname.split("/")[1]
   const [displayLanguage, setDisplayLanguage] = useState(currentPageLanguage)
 
   const handleDisplayLanguageChange = (event) => {

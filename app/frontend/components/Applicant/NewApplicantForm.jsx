@@ -8,7 +8,7 @@ import UserHeaderUI from '~/components/RegistrationSession/UserHeaderUI.jsx';
 function NewApplicantForm(props) {
   const csrf_token = document.head.getElementsByTagName('meta')[2].content;
   const registrationSessionID = document.getElementById("data").getAttribute("registrationSessionID");
-  const locale = document.getElementById("data").getAttribute("locale");
+  const locale = document.getElementById("locale").getAttribute("content");
   const mobile = document.getElementById("data").getAttribute("mobile");
   const errors = JSON.parse(document.getElementById("data").getAttribute("errors"));
   const applicantParams = JSON.parse(document.getElementById("data").getAttribute("applicantParams"));
