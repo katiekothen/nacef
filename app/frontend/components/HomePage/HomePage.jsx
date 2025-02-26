@@ -10,6 +10,7 @@ function HomePage(props) {
   const secondMessage = document.getElementById("second_message").getAttribute("content");
   const homeTitle = document.getElementById("home_title").getAttribute("content");
   const link = <a href={`/${locale}/registration_sessions`}>{here}</a>
+  console.log(locale)
   return (
     <div>
       {UserHeaderUI(props.admin)}

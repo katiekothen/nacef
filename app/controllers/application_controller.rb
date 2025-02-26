@@ -19,6 +19,8 @@ class ApplicationController < ActionController::Base
     locale = I18n.locale
     if /en|es|ar|ru/.match?(extract_locale_from_accept_language_header)
       locale = extract_locale_from_accept_language_header
+    else
+      locale = I18n.locale
     end
   end
 

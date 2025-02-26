@@ -3,7 +3,7 @@ class ApplicantsController < ApplicationController
   include ApplicationHelper
 
   def new
-    @locale = params[:locale] || extract_locale_from_accept_language_header
+    @locale = params[:locale] || set_locale
     redirect_to registration_sessions_path unless @registration_session.applicant_limit_check
     @registration_session_id = params[:registration_session_id]
     @errors = params[:errors].to_json
@@ -12,7 +12,7 @@ class ApplicantsController < ApplicationController
   end
 
   def create
-    locale = params[:locale] || extract_locale_from_accept_language_header
+    locale = params[:locale] || set_locale
     if @registration_session.applicant_limit_check
       applicant = @registration_session.applicants.create(applicant_params)
       @errors = applicant.errors.messages
