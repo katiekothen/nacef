@@ -4,8 +4,9 @@
     id="data" 
     registrationSessions="<%= @registration_sessions %>" 
     newApplicantError="<%= @error_adding %>"
-    locale="<%= @locale %>"
 />
+
+<div id="locale" content="<%= @locale %>"/>
 
 <div id="register" content="<%= I18n.t :register %>"/>
 <div id="available_space" content="<%= I18n.t :available_space %>"/>

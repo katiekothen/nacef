@@ -16,7 +16,7 @@ function RegistrationSessionIndex(props) {
   const [displayConfirmationModal, setDisplayConfirmationModal] = useState(false);
   const [deleteMessage, setDeleteMessage] = useState(null);
   const [deletePath, setDeletePath] = useState(null);
-  const locale = document.getElementById("data").getAttribute("locale");
+  const locale = document.getElementById("locale").getAttribute("content");
   const title = document.getElementById("title").getAttribute("content");
   
 
