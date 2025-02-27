@@ -33,7 +33,7 @@ function HomePage(props) {
         <br />
         <br />
         <p style={{ textAlign: "center" }}>{location}{' '}
-          <a href={`${locationMapLinkDictionary[locationLibrary]}`}>{locationLibrary}</a>
+          <a href={`${locationMapLinkDictionary["Eloise May"]}`}>{locationLibrary}</a>
         </p>
         </div>
       </div>
