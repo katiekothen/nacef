@@ -42,7 +42,7 @@ class Admin::ApplicantsController < ApplicationController
   end
 
   def applicant_params
-    params.permit(:first_name, :last_name, :email, :phone, :language)
+    params.permit(:first_name, :last_name, :email, :phone, :interpretation_needed, :language, :referral)
   end
 
   def create_applicant
