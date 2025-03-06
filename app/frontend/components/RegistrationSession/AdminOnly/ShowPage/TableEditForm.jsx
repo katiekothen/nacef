@@ -9,9 +9,9 @@ const TableEditForm = (registrationSession, formValue, csrf_token) => {
       <input type="hidden" name="last_name" value={formValue.lastName} />
       <input type="hidden" name="email" value={formValue.email} />
       <input type="hidden" name="phone" value={formValue.phone} />
-      <input type="hidden" name="language" value={formValue.interpreting} />
+      <input type="hidden" name="interpretation_needed" value={formValue.interpreting} />
       <input type="hidden" name="language" value={formValue.language} />
-      <input type="hidden" name="language" value={formValue.referrer} />
+      <input type="hidden" name="referral" value={formValue.referral} />
     </form>
   );
 };
